@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+
+spawn dx-app-wizard
+
+expect "App Name:"
+send -- "findNi\n"
+
+expect "Title []:"
+send -- "Find Ni\n"
+
+expect "Summary []:"
+send -- "Finds words that begin with Ni\n"
+
+send -- "0.0.1"
+send -- "wordsFile"
+send -- "File of Words"
+send -- "file"
+send -- ""
+send -- "outfile"
+send -- "Output file of words"
+send -- "file"

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Quick Start | vArmyKnife: A multifunction toolkit for manipulating and processing variant files</title>
+  <meta name="description" content="The user manual for the vArmyKnife software package, an integrated, multifunction toolkit for modifying, processing, filtering, annotating, and organizing variant files." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Quick Start | vArmyKnife: A multifunction toolkit for manipulating and processing variant files" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="The user manual for the vArmyKnife software package, an integrated, multifunction toolkit for modifying, processing, filtering, annotating, and organizing variant files." />
+  <meta name="github-repo" content="hartleys/vArmyKnife" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Quick Start | vArmyKnife: A multifunction toolkit for manipulating and processing variant files" />
+  
+  <meta name="twitter:description" content="The user manual for the vArmyKnife software package, an integrated, multifunction toolkit for modifying, processing, filtering, annotating, and organizing variant files." />
+  
+
+<meta name="author" content="Stephen Hartley, PhD" />
+
+
+<meta name="date" content="2019-08-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="install.html">
+<link rel="next" href="walkthrough.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="styles.css" /><style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>2</b> Download, Installation, and Help</a><ul>
+<li class="chapter" data-level="2.1" data-path="install.html"><a href="install.html#reqs"><i class="fa fa-check"></i><b>2.1</b> Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="quickstart.html"><a href="quickstart.html"><i class="fa fa-check"></i><b>3</b> Quick Start</a><ul>
+<li class="chapter" data-level="3.1" data-path="quickstart.html"><a href="quickstart.html#chain"><i class="fa fa-check"></i><b>3.1</b> Chaining multiple processing steps</a></li>
+<li class="chapter" data-level="3.2" data-path="quickstart.html"><a href="quickstart.html#docs"><i class="fa fa-check"></i><b>3.2</b> Full documentation and Help</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="walkthrough.html"><a href="walkthrough.html"><i class="fa fa-check"></i><b>4</b> Pipeline Walkthrough</a></li>
+<li class="chapter" data-level="5" data-path="varproc.html"><a href="varproc.html"><i class="fa fa-check"></i><b>5</b> Variant Processing Functions</a></li>
+<li class="chapter" data-level="6" data-path="ccaller.html"><a href="ccaller.html"><i class="fa fa-check"></i><b>6</b> Concordance Caller</a></li>
+<li class="chapter" data-level="7" data-path="minorutils.html"><a href="minorutils.html"><i class="fa fa-check"></i><b>7</b> Other minor utilities</a></li>
+<li class="chapter" data-level="8" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i><b>8</b> Acknowledgements</a></li>
+<li class="chapter" data-level="9" data-path="legal.html"><a href="legal.html"><i class="fa fa-check"></i><b>9</b> Legal</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">vArmyKnife: A multifunction toolkit for manipulating and processing variant files</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="quickstart" class="section level1">
+<h1><span class="header-section-number">3</span> Quick Start</h1>
+<p>TODO write this section!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="quickstart.html#cb1-1"></a><span class="bu">echo</span> <span class="st">&quot;Hello World!&quot;</span></span>
+<span id="cb1-2"><a href="quickstart.html#cb1-2"></a><span class="fu">which</span> python</span>
+<span id="cb1-3"><a href="quickstart.html#cb1-3"></a><span class="fu">which</span> R</span>
+<span id="cb1-4"><a href="quickstart.html#cb1-4"></a><span class="fu">which</span> java</span>
+<span id="cb1-5"><a href="quickstart.html#cb1-5"></a><span class="fu">which</span> tabix</span>
+<span id="cb1-6"><a href="quickstart.html#cb1-6"></a><span class="fu">which</span> bgzip</span>
+<span id="cb1-7"><a href="quickstart.html#cb1-7"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## Hello World!
+## /DCEG/Resources/Tools/python/2.7.14-shared/bin/python
+## /DCEG/Resources/Tools/R/R-3.5.2/bin/R
+## /DCEG/Resources/Tools/jdk/8u111/jdk1.8.0_111/bin/java
+## /DCEG/Resources/Tools/python/2.7.14-shared/bin/tabix
+## /DCEG/Resources/Tools/python/2.7.14-shared/bin/bgzip
+## _book
+## book.bib
+## _bookdown_files
+## buildLog
+## buildScripts
+## exampleData
+## _main_files
+## _main.Rmd
+## packages.bib
+## params.rc
+## rmd.cheatsheet.txt
+## vArmyKnifeUserManual.Rmd</code></pre>
+<div id="chain" class="section level2">
+<h2><span class="header-section-number">3.1</span> Chaining multiple processing steps</h2>
+<p>vArmyKnife is designed to greatly reduce the number of separate steps required in an analysis pipeline. Many steps can be performed in a running stream through the VCF file. This has a number of major benefits:</p>
+<ul>
+<li>Fewer steps: Many processing/annotation steps can be combined into a single command.</li>
+<li>Quick error testing: Unlike with other pipeline tools in which tools are performed in succession, vArmyKnife will run each VCF line through the full pipeline before moving on to the next. Thus, if there are errors they will appear almost immediately.</li>
+<li>Quick output testing: Similarly, vArmyKnife starts generating VCF lines almost immediately, so users can quickly examine the output and make adjustments if desired.</li>
+</ul>
+<p>Additionally, vArmyKnife can run in a pipe, taking input from STDIN and writing output to STDOUT. This is a method used on linux machines to chain different software tools together.
+You can tell vArmyKnife to read from STDIN or write to STDOUT by simply setting “-” to the input or output filename, respectively, and then using the “bar” symbol (ie: “|”) to
+link varmyknife with other tools.</p>
+<p>For example, one could use tabix and bgzip to extract only a small segment of the genome, run vArmyKnife on it, and then block-compress the output.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="quickstart.html#cb3-1"></a><span class="co">#(set up environment)</span></span>
+<span id="cb3-2"><a href="quickstart.html#cb3-2"></a><span class="bu">source</span> params.rc</span>
+<span id="cb3-3"><a href="quickstart.html#cb3-3"></a><span class="co">#tabix is a tool that extracts a certain section of a VCF file and passes it to STDOUT.</span></span>
+<span id="cb3-4"><a href="quickstart.html#cb3-4"></a><span class="co">#the STDOUT pipes into the STDIN that gets passed to varmyknife, which then </span></span>
+<span id="cb3-5"><a href="quickstart.html#cb3-5"></a><span class="co">#performs some processing, and then passes the output on to bgzip, which</span></span>
+<span id="cb3-6"><a href="quickstart.html#cb3-6"></a><span class="co">#compresses the file in a special bgzip format (which allows for tabix-indexing).</span></span>
+<span id="cb3-7"><a href="quickstart.html#cb3-7"></a>  <span class="ex">tabix</span> -h exampleData/exampleOutput/concordanceCaller.vcf.gz chr21:15003364-15017116 <span class="kw">|</span> <span class="kw">\</span></span>
+<span id="cb3-8"><a href="quickstart.html#cb3-8"></a>  <span class="ex">varmyknife</span> walkVcf --leftAlignAndTrim \</span>
+<span id="cb3-9"><a href="quickstart.html#cb3-9"></a>                         --genomeFA <span class="st">&quot;exampleData/genome/hg19.chr21.fa&quot;</span> \</span>
+<span id="cb3-10"><a href="quickstart.html#cb3-10"></a>                         - - <span class="kw">|</span> <span class="ex">bgzip</span> <span class="op">&gt;</span> <span class="st">&quot;exampleData/exampleOutput/test1A.vcf.gz&quot;</span></span></code></pre></div>
+<pre><code>## JAVA=/DCEG/Resources/Tools/jdk/8u111/jdk1.8.0_111/bin/java
+## JAR=/mnt/nfs/gigantor/ifs/DCEG/Projects/CCSS/steve/software-big/vArmyKnife/2.2.170/bin/../vArmyKnife.jar
+## JAVAOPTS=&quot;&quot;
+## ANNOJAR_COMMAND=walkVcf...
+## Starting Util v2.2.170 (Compiled Thu Aug  8 13:51:23 EDT 2019)
+## Starting time: (Wed Aug 21 16:07:10 EDT 2019)
+## INPUT_COMMAND(walkVcf)
+##   INPUT_ARG(infile)=-
+##   INPUT_ARG(outfile)=-
+##    INPUT_ARG(leftAlignAndTrim)=true
+##    INPUT_ARG(genomeFA)=Some(exampleData/genome/hg19.chr21.fa)
+## ] [STARTING ITERATION:] [Time: 2019-08-21 16:07:11] chr21 [96MB / 2058MB]
+##          ---------------
+##          Warnings So Far:
+##          Notices So Far:
+##          Counts:
+##            0: CHANGE_LEFTALIGNANDTRIM
+##            0: SHIFTED_LEFTALIGN
+##            0: TRIMMED
+##          ---------------
+##       (Walker: inputVCF, [1]/[1]/[00:00:00.0000]])
+##       (Walker: LeftAlignAndTrim, [1]/[1]/[00:00:00.0000]])
+## [.
+## No output file split. Outputting to file: -
+## .... ..... ] [FINISHED ITERATION: 10 lines processed] [Time: 2019-08-21 16:07:11] (Elapsed: 00:00:00.0115; 86.96 lines per sec) chr21 [107MB / 2058MB]
+##          ---------------
+##          Warnings So Far:
+##          Notices So Far:
+##          Counts:
+##            0: CHANGE_LEFTALIGNANDTRIM
+##            0: SHIFTED_LEFTALIGN
+##            0: TRIMMED
+##          ---------------
+##       (Walker: inputVCF, [10]/[10]/[00:00:00.0013]])
+##       (Walker: LeftAlignAndTrim, [10]/[10]/[00:00:00.0071]])
+##       (Walker: outputVCF, [10]/[8]/[00:00:00.0000]])
+##   #### NOTE (TRIM_NOTICE 1):
+##     &gt;&gt; Trimmed 0 lines and leftAligned 0 lines.
+## Done. (Wed Aug 21 16:07:11 EDT 2019)
+## &lt;-------&gt;
+##    Note: 1 Notices Thrown:
+##    1 TRIM_NOTICE
+## &lt;-------&gt;</code></pre>
+<p>The intent is to reduce the time and effort spent designing, testing, and fine-tuning the pipeline, and then also reduce the number of steps required to run that pipeline once it’s been built.</p>
+</div>
+<div id="docs" class="section level2">
+<h2><span class="header-section-number">3.2</span> Full documentation and Help</h2>
+<p>Complete documentation of all the options available to the walkVcf function can be accessed using the command:</p>
+<pre><code>varmyknife walkVcf --help</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="install.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="walkthrough.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<script type="text/javascript" src="styles.js"></script></body>
+
+</html>

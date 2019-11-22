@@ -1,0 +1,22 @@
+
+.sourceOutputButton {
+  display: inline-block;
+  line-height: 1.25;
+  color: black;
+  text-decoration: inherit;
+  margin: 0;
+  text-indent: -5em; padding-left: 5em;
+  width: 100%; 
+}
+.book .book-body .page-wrapper .sourceOutputBox.sourceOutputBox2.sourceOutputBox3.sourceOutputBox4.sourceOutputBox5 {
+  background-color: #fcfcfc ;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: black;
+  overflow: auto;
+}
+
+

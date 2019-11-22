@@ -1,0 +1,12 @@
+findNi
+Find Ni
+Finds words that begin with Ni
+0.0.1
+wordsFile
+File of Words
+file
+
+outfile
+Output file of words
+file
+

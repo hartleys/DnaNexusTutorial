@@ -1,0 +1,57 @@
+{
+  "name": "findNi",
+  "title": "Find Ni",
+  "summary": "Finds words that begin with ni",
+  "dxapi": "1.0.0",
+  "version": "0.0.3",
+  "inputSpec": [
+    {
+      "name": "wordsFile",
+      "label": "File of all words",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "outfile",
+      "label": "Output file of words",
+      "class": "file",
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "interpreter": "bash",
+    "release": "16.04",
+    "distribution": "Ubuntu",
+    "file": "src/findNi.sh",
+    "execDepends": [
+        {"name": "openjdk-8-jre-headless",
+         "package_manager": "apt"},
+
+        {"name": "tabix",
+         "package_manager": "apt"}
+    ]
+  },
+  "regionalOptions": {
+    "aws:us-east-1": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem1_ssd1_x4"
+        }
+      }
+    }
+  }
+}

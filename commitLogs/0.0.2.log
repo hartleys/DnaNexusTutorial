@@ -1,0 +1,111 @@
+export VERSION="0.0.2"
+export FULLDATE="Fri Nov 22 10:32:46 EST 2019"
+export FULLDATESEC="1574436766"
+export DATE="2019-11-22"
+export DATETEXT="November 22, 2019"
+export COMMITCT=0
+export FULLVERSION=0.0.2
+export COMMITCT=0
+export FULLVERSION=0.0.2
+git add:
+    # On branch master
+    # Untracked files:
+    #   (use "git add <file>..." to include in what will be committed)
+    #
+    #	commitInfo.rc
+    #	commitLogs/
+    #	commitToGithub.bash
+    #	doc/
+    #	examples/
+    nothing added to commit but untracked files present (use "git add" to track)
+
+
+git commit:
+    [master cb75900] 0.0.2
+     76 files changed, 488565 insertions(+)
+     create mode 100644 commitInfo.rc
+     create mode 100644 commitLogs/0.0.2.log
+     create mode 100644 commitLogs/commitInfo.0.0.1.rc
+     create mode 100644 commitToGithub.bash
+     create mode 100644 doc/_book/_main.pdf
+     create mode 100644 doc/_book/buildApp.html
+     create mode 100644 doc/_book/dlres.html
+     create mode 100644 doc/_book/example.html
+     create mode 100644 doc/_book/legal.html
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/css/plugin-bookdown.css
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/css/plugin-fontsettings.css
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/css/plugin-highlight.css
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/css/plugin-search.css
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/css/plugin-table.css
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/css/style.css
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/js/app.min.js
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/js/jquery.highlight.js
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/js/lunr.js
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/js/plugin-bookdown.js
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/js/plugin-fontsettings.js
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/js/plugin-search.js
+     create mode 100644 doc/_book/libs/gitbook-2.6.7/js/plugin-sharing.js
+     create mode 100644 doc/_book/libs/jquery-2.2.3/jquery.min.js
+     create mode 100644 doc/_book/misccmd.html
+     create mode 100644 doc/_book/modTheApp.html
+     create mode 100644 doc/_book/references.html
+     create mode 100644 doc/_book/run.html
+     create mode 100644 doc/_book/search_index.json
+     create mode 100644 doc/_book/setup.html
+     create mode 100755 doc/_book/styles.css
+     create mode 100755 doc/_book/styles.js
+     create mode 100644 doc/_book/uploadInput.html
+     create mode 100644 doc/_book/wiz.html
+     create mode 100644 doc/book.bib
+     create mode 100644 doc/buildScripts.bash
+     create mode 100755 doc/buildScripts/build.bash
+     create mode 100755 doc/buildScripts/buildManual.R
+     create mode 100755 doc/buildScripts/quickstart.html
+     create mode 100755 doc/buildScripts/styles.css
+     create mode 100755 doc/buildScripts/styles.js
+     create mode 100644 doc/dnaNexusTutorial.SWH.2019.09.Rmd
+     create mode 100644 doc/ex/findNi/Readme.developer.md
+     create mode 100644 doc/ex/findNi/Readme.md
+     create mode 100644 doc/ex/findNi/dxapp.json
+     create mode 100644 doc/ex/findNi/findNi_original/Readme.developer.md
+     create mode 100644 doc/ex/findNi/findNi_original/Readme.md
+     create mode 100644 doc/ex/findNi/findNi_original/dxapp.json
+     create mode 100755 doc/ex/findNi/findNi_original/src/findNi.sh
+     create mode 100755 doc/ex/findNi/src/findNi.sh
+     create mode 100644 doc/packages.bib
+     create mode 100644 doc/params.rc
+     create mode 100644 doc/rmd.cheatsheet.txt
+     create mode 100644 doc/scrap/codeblockwiz.2.txt
+     create mode 100644 doc/scrap/codeblockwiz.txt
+     create mode 100644 doc/scrap/dnaNexusTutorial.SWH.2019.09.Rmd
+     create mode 100644 doc/styles.css
+     create mode 100644 doc/styles.js
+     create mode 100644 doc/words.that.begin.with.ni.txt
+     create mode 100644 examples/files/dxapp.v1.json
+     create mode 100644 examples/files/dxapp.v2.json
+     create mode 100644 examples/files/dxapp.v3.json
+     create mode 100644 examples/files/findNi.v1.bash
+     create mode 100644 examples/files/findNi.v2.bash
+     create mode 100644 examples/files/findNi.v3.bash
+     create mode 100644 examples/findNi_original/Readme.developer.md
+     create mode 100644 examples/findNi_original/Readme.md
+     create mode 100644 examples/findNi_original/dxapp.json
+     create mode 100755 examples/findNi_original/src/findNi.sh
+     create mode 100644 examples/indata/linux.words.txt
+     create mode 100755 examples/indata/wizardSends
+     create mode 100644 examples/indata/wizardSends.txt
+     create mode 100644 examples/presentation.bash
+     create mode 100755 examples/typeInput.py
+     create mode 100644 examples/wizardFullConsoleRun.txt
+     create mode 100644 examples/wizardInputs.txt
+export VERSION="0.0.2"
+export FULLDATE="Fri Nov 22 10:47:36 EST 2019"
+export FULLDATESEC="1574437656"
+export DATE="2019-11-22"
+export DATETEXT="November 22, 2019"
+export COMMITCT=0
+export FULLVERSION=0.0.2
+###################
+
+git add:

@@ -1,0 +1,13 @@
+spawn dx-app-wizard
+
+send -- "findNi"
+send -- "Find Ni"
+send -- "Finds words that begin with Ni"
+send -- "0.0.1"
+send -- "wordsFile"
+send -- "File of Words"
+send -- "file"
+send -- ""
+send -- "outfile"
+send -- "Output file of words"
+send -- "file"
