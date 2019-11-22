@@ -57,20 +57,21 @@ cat commitInfo.rc >> $LOGFILE
 
 echo "###################" > $LOGFILE
 
-cd doc
+cd build
 ./buildScripts.bash
+
+cd ..
 
 echo "###################" >> $LOGFILE
 echo "" >> $LOGFILE
 echo "git add:" 2>&1 | tee -a $LOGFILE
 git add ./  2>&1 | sed 's/^/    /g' | tee -a $LOGFILE
-git add ./* 2>&1 | sed 's/^/    /g' | tee -a $LOGFILE
 
 
 echo "" >> $LOGFILE
 echo "" >> $LOGFILE
 echo "git status:" 2>&1 | tee -a $LOGFILE
-git status ./ 2>&1 | sed 's/^/    /g' | tee -a ../commitlogs.VAK/${VERSION}.log
+git status ./ 2>&1 | sed 's/^/    /g' | tee -a .$LOGFILE
 
 echo "" >> $LOGFILE
 echo "" >> $LOGFILE
