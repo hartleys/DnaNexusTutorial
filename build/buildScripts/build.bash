@@ -26,11 +26,11 @@ Rscript buildScripts/buildManual.R $1
 
 echo "done... $(date)"
 
-cp buildScripts/styles.* _book/
-
-while read HTMLFILE
-do
-  sed -i 's/<style/<link rel="stylesheet" type="text\/css" href="styles.css" \/><style/g' $HTMLFILE
-  sed -i 's/<\/body>/<script type="text\/javascript" src="styles.js"><\/script><\/body>/g' $HTMLFILE
-
-done < <( ls _book/*.html ) 
+#cp buildScripts/styles.* _book/
+#
+#while read HTMLFILE
+#do
+#  sed -i 's/<style/<link rel="stylesheet" type="text\/css" href="styles.css" \/><style/g' $HTMLFILE
+#  sed -i 's/<\/body>/<script type="text\/javascript" src="styles.js"><\/script><\/body>/g' $HTMLFILE
+#
+#done < <( ls _book/*.html ) 

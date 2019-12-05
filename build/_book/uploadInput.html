@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Uploading Input Files | DNAnexus Command Line Interface</title>
+  <title>7 Uploading Input Files | DNAnexus Command Line Interface</title>
   <meta name="description" content="A tutorial in the use of the DNA nexus command line interface (CLI)." />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Uploading Input Files | DNAnexus Command Line Interface" />
+  <meta property="og:title" content="7 Uploading Input Files | DNAnexus Command Line Interface" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hartleys/vArmyKnife" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Uploading Input Files | DNAnexus Command Line Interface" />
+  <meta name="twitter:title" content="7 Uploading Input Files | DNAnexus Command Line Interface" />
   
   <meta name="twitter:description" content="A tutorial in the use of the DNA nexus command line interface (CLI)." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Stephen Hartley, PhD" />
 
 
-<meta name="date" content="2019-11-22" />
+<meta name="date" content="2019-12-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -126,15 +126,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a></li>
-<li class="chapter" data-level="2" data-path="example.html"><a href="example.html"><i class="fa fa-check"></i><b>2</b> A Simple Example:</a></li>
-<li class="chapter" data-level="3" data-path="wiz.html"><a href="wiz.html"><i class="fa fa-check"></i><b>3</b> The App Builder Wizard:</a></li>
-<li class="chapter" data-level="4" data-path="modTheApp.html"><a href="modTheApp.html"><i class="fa fa-check"></i><b>4</b> Modifying the App:</a></li>
-<li class="chapter" data-level="5" data-path="buildApp.html"><a href="buildApp.html"><i class="fa fa-check"></i><b>5</b> Building the App:</a></li>
-<li class="chapter" data-level="6" data-path="uploadInput.html"><a href="uploadInput.html"><i class="fa fa-check"></i><b>6</b> Uploading Input Files</a></li>
-<li class="chapter" data-level="7" data-path="run.html"><a href="run.html"><i class="fa fa-check"></i><b>7</b> Running the software</a></li>
-<li class="chapter" data-level="8" data-path="dlres.html"><a href="dlres.html"><i class="fa fa-check"></i><b>8</b> Downloading results</a></li>
-<li class="chapter" data-level="9" data-path="misccmd.html"><a href="misccmd.html"><i class="fa fa-check"></i><b>9</b> Other useful commands:</a></li>
-<li class="chapter" data-level="10" data-path="legal.html"><a href="legal.html"><i class="fa fa-check"></i><b>10</b> Legal</a></li>
+<li class="chapter" data-level="2" data-path="web.html"><a href="web.html"><i class="fa fa-check"></i><b>2</b> The DNANexus Web Interface:</a></li>
+<li class="chapter" data-level="3" data-path="example.html"><a href="example.html"><i class="fa fa-check"></i><b>3</b> A Simple Example:</a></li>
+<li class="chapter" data-level="4" data-path="wiz.html"><a href="wiz.html"><i class="fa fa-check"></i><b>4</b> The App Builder Wizard:</a></li>
+<li class="chapter" data-level="5" data-path="modTheApp.html"><a href="modTheApp.html"><i class="fa fa-check"></i><b>5</b> Modifying the App:</a></li>
+<li class="chapter" data-level="6" data-path="buildApp.html"><a href="buildApp.html"><i class="fa fa-check"></i><b>6</b> Building the App:</a></li>
+<li class="chapter" data-level="7" data-path="uploadInput.html"><a href="uploadInput.html"><i class="fa fa-check"></i><b>7</b> Uploading Input Files</a></li>
+<li class="chapter" data-level="8" data-path="run.html"><a href="run.html"><i class="fa fa-check"></i><b>8</b> Running the software</a></li>
+<li class="chapter" data-level="9" data-path="dlres.html"><a href="dlres.html"><i class="fa fa-check"></i><b>9</b> Downloading results</a></li>
+<li class="chapter" data-level="10" data-path="misccmd.html"><a href="misccmd.html"><i class="fa fa-check"></i><b>10</b> Other useful commands:</a></li>
+<li class="chapter" data-level="11" data-path="legal.html"><a href="legal.html"><i class="fa fa-check"></i><b>11</b> Legal</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -154,11 +155,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="uploadInput" class="section level1">
-<h1><span class="header-section-number">6</span> Uploading Input Files</h1>
+<h1><span class="header-section-number">7</span> Uploading Input Files</h1>
 <p>Before we can run our new app, first we need to upload an input file. For this we
 use the upload command:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="uploadInput.html#cb23-1"></a><span class="ex">dx</span> upload ../examples/indata/linux.words.txt --brief --path /test/linux.words.txt</span></code></pre></div>
-<pre><code>## file-FgG093Q0pgP4JfZz7PpfbBqx</code></pre>
+<pre><code>## file-FgXgj5j0pgP2Kg859FQjK0Vf</code></pre>
 </div>
             </section>
 

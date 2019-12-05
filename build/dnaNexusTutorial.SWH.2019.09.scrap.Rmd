@@ -367,6 +367,23 @@ set -x
 dx describe /test/words.that.begin.with.ni.txt
 ```
 
+The resources directory: you can add software installations to your virtual machine by adding them to the resources
+directory in the applet directory. The entire resources directory will be copied to the filesystem root on the 
+cloud virtual machine.
+
+You can place most software binaries in the resources/usr/bin directory and just run them that way. For example, to install samtools:
+
+    +-- Applet dir
+    ¦   +-- src
+    ¦   +-- dxapp.json
+    ¦   +-- resources
+    ¦       +-- usr
+    ¦           +-- bin
+    ¦               +-- < samtools binary >
+
+
+
+    
     dx watch <jobid>
 
 <!-- ################################################################################################################ --> 

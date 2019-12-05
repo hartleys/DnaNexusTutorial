@@ -232,3 +232,11 @@ git push:
     fatal: Authentication failed
     To https://github.com/hartleys/DnaNexusTutorial
        6cb5689..bb177c8  master -> master
+    [master 6870e59] 0.0.2
+     15 files changed, 158 insertions(+), 18 deletions(-)
+     create mode 100644 commitLogs/0.0.3.log
+     create mode 100644 commitLogs/commitInfo.0.0.2.rc
+     mode change 100644 => 100755 commitToGithub.bash
+     create mode 100644 docs/DnaNexusTutorial.pdf
+    To https://github.com/hartleys/DnaNexusTutorial
+       bb177c8..6870e59  master -> master

@@ -1,0 +1,801 @@
+--- 
+title: "DNAnexus Command Line Interface"
+author: "Stephen Hartley, PhD"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: report
+geometry: margin=0.75in
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: hartleys/vArmyKnife
+description: "A tutorial in the use of the DNA nexus command line interface (CLI)."
+---
+
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# Setup {#setup}
+
+First we have to load the DNAnexus command line interface utility. Both CCAD and Biowulf have it installed as a module.
+
+```{bash}
+#CCAD:
+module load dx
+#BIOWULF:
+#module load DNAnexus
+```
+
+Next we have to login, select a project, and 
+
+```{bash}
+#Log in (only have to do this the first time)
+#dx login
+
+#See what projects you have access to:
+dx find projects
+
+#Select the project you want from the above list:
+dx select project-FbvPXyQ0pgP1PQbkJG1vfQpz
+
+```
+
+Once dx is loaded and a project is selected, you can use many standard linux commands on the project by prefacing the command with "dx"
+
+```{bash}
+dx ls
+dx cd test
+dx cd ..
+
+dx mkdir test2
+dx rmdir test2
+```
+
+For a full list of available commands:
+
+```{bash}
+dx help all
+```
+
+# The DNANexus Web Interface:  {#web}
+
+```{r, echo = FALSE, fig.cap = 'A figure caption.'}
+knitr::include_graphics("img/dnaNexus.frontpage.PNG")
+```
+
+# A Simple Example:  {#example}
+
+We are going to do a very simple example in which we upload some data, run a program on it, and then download the result.
+
+Say we want to extract all the dictionary words that begin with "ni".
+
+# The App Builder Wizard: {#wiz}
+
+The first step is to create a new App. You can generate the files from a template, write them yourself, or 
+you can use the dx app creation wizard. For your first project, I recommend the last option.
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash nobr"></code></pre></div>
+<pre><code>
+dx-app-wizard
+ DNAnexus App Wizard, API v1.0.0
+ 
+ Basic Metadata
+ 
+ Please enter basic metadata fields that will be used to describe your app.
+ Optional fields are denoted by options with square brackets.  At the end of
+ this wizard, the files necessary for building your app will be generated
+ from the answers you provide.
+ 
+ The name of your app must be unique on the DNAnexus platform.
+ After creating your app for the first time, you will be able to publish new
+ versions using the same app name.  App names are restricted to alphanumeric
+ characters (a-z, A-Z, 0-9), and the characters ".", "_", and "-".
+ App Name: <span style="color: red"> findNi </span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ The title, if provided, is what is shown as the name of your app on
+ the website.  It can be any valid UTF-8 string.
+ Title []: <span style="color: red"> Find Ni </span>
+ 
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ 
+ The summary of your app is a short phrase or one-line description
+ of what your app does.  It can be any UTF-8 human-readable string.
+ Summary []: <span style="color: red"> Finds words that begin with ni</span>
+ 
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ 
+ You can publish multiple versions of your app, and the version of
+ your app is a string with which to tag a particular version.  We encourage
+ the use of Semantic Versioning for labeling your apps (see
+ http://semver.org/ for more details).
+ Version [0.0.1]: <span style="color: red"> 0.0.1</span>
+ 
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ 
+ Input Specification
+ 
+ You will now be prompted for each input parameter to your app.  Each
+ parameter should have a unique name that uses only the underscore "_" and
+ alphanumeric characters, and does not start with a number.
+ 
+ 1st input name (&lt;ENTER&gt; to finish): <span style="color: red"> wordsFile</span>
+ Label (optional human-readable name) []: <span style="color: red"> File of all words</span>
+ Your input parameter must be of one of the following classes:
+ applet         array:file     array:record   file           int
+ array:applet   array:float    array:string   float          record
+ array:boolean  array:int      boolean        hash           string
+ 
+ Choose a class (&lt;TAB&gt; twice for choices): <span style="color: red"> file</span>
+ This is an optional parameter [y/n]: <span style="color: red"> n</span>
+ 
+ 2nd input name (&lt;ENTER&gt; to finish):
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Output Specification
+ 
+ You will now be prompted for each output parameter of your app.  Each
+ parameter should have a unique name that uses only the underscore "_" and
+ alphanumeric characters, and does not start with a number.
+ 
+ 1st output name (&lt;ENTER&gt; to finish): <span style="color: red"> outfile</span>
+ Label (optional human-readable name) []: <span style="color: red"> Output file of words</span>
+ Choose a class (&lt;TAB&gt; twice for choices): <span style="color: red"> file</span>
+ 
+ 2nd output name (&lt;ENTER&gt; to finish):
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Timeout Policy
+ 
+ Set a timeout policy for your app. Any single entry point of the
+ app that runs longer than the specified timeout will fail with a
+ TimeoutExceeded error. Enter an int greater than 0 with a single-letter
+ suffix (m=minutes, h=hours, d=days) (e.g. "48h").
+ Timeout policy [48h]: <span style="color: red"> 48h</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Template Options
+ 
+ You can write your app in any programming language, but we provide
+ templates for the following supported languages: Python, bash
+ Programming language: <span style="color: red"> bash</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Access Permissions
+ If you request these extra permissions for your app, users will see this
+ fact when launching your app, and certain other restrictions will apply.
+ For more information, see
+ https://wiki.dnanexus.com/App-Permissions.
+ 
+ Access to the Internet (other than accessing the DNAnexus API).
+ Will this app need access to the Internet? [y/N]: <span style="color: red"> N</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Direct access to the parent project. This is not needed if your app
+ specifies outputs,     which will be copied into the project after it's
+ done running.
+ Will this app need access to the parent project? [y/N]: <span style="color: red"> N</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ System Requirements
+ 
+ Common AWS instance types:
+ +--------------------------------------------+
+ |Name         |Memory_GB|Storage_GB|CPU_Cores|
+ +-------------+---------+----------+---------|
+ |mem1_ssd1_x2 |3.8      |32        |2        |
+ |mem1_ssd1_x4 |7.5      |80        |4        |
+ |mem1_ssd1_x8 |15.0     |160       |8        |
+ |mem1_ssd1_x16|30.0     |320       |16       |
+ |mem1_ssd1_x32|60.0     |640       |32       |
+ |mem2_ssd1_x2 |7.5      |32        |2        |
+ |mem2_ssd1_x4 |15.0     |80        |4        |
+ |mem2_ssd1_x8 |30.0     |160       |8        |
+ |mem3_ssd1_x2 |15.0     |32        |2        |
+ |mem3_ssd1_x4 |30.5     |80        |4        |
+ |mem3_ssd1_x8 |61.0     |160       |8        |
+ |mem3_ssd1_x16|122.0    |320       |16       |
+ |mem3_ssd1_x32|244.0    |640       |32       |
+ |mem1_ssd2_x2 |3.8      |160       |2        |
+ |mem1_ssd2_x4 |7.5      |320       |4        |
+ |mem1_ssd2_x8 |15       |640       |8        |
+ |mem1_ssd2_x16|30       |1280      |16       |
+ |mem1_ssd2_x36|60       |2880      |36       |
+ +--------------------------------------------+
+ Common Azure instance types:
+ +--------------------------------------------------+
+ |Name               |Memory_GB|Storage_GB|CPU_Cores|
+ +-------------------+---------+----------+---------|
+ |azure:mem1_ssd1_x2 |3.9      |32        |2        |
+ |azure:mem1_ssd1_x4 |7.8      |64        |4        |
+ |azure:mem1_ssd1_x8 |15.7     |128       |8        |
+ |azure:mem1_ssd1_x16|31.4     |256       |16       |
+ |azure:mem2_ssd1_x1 |3.5      |128       |1        |
+ |azure:mem2_ssd1_x2 |7.0      |128       |2        |
+ |azure:mem2_ssd1_x4 |14.0     |128       |4        |
+ |azure:mem2_ssd1_x8 |28.0     |256       |8        |
+ |azure:mem2_ssd1_x16|56.0     |512       |16       |
+ |azure:mem3_ssd1_x2 |14.0     |128       |2        |
+ |azure:mem3_ssd1_x4 |28.0     |128       |4        |
+ |azure:mem3_ssd1_x8 |56.0     |256       |8        |
+ |azure:mem3_ssd1_x16|112.0    |512       |16       |
+ |azure:mem3_ssd1_x20|140.0    |640       |20       |
+ |azure:mem4_ssd1_x2 |28.0     |128       |2        |
+ |azure:mem4_ssd1_x4 |56.0     |128       |4        |
+ |azure:mem4_ssd1_x8 |112.0    |256       |8        |
+ |azure:mem4_ssd1_x16|224      |512       |16       |
+ |azure:mem4_ssd1_x32|448      |1024      |32       |
+ +--------------------------------------------------+
+ Default instance type: The instance type you select here will apply
+ to all entry points in your app unless you override it. See
+ https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types
+ for more information.
+ Choose an instance type for your app [mem1_ssd1_x4]: <span style="color: red"> mem1_ssd_x4</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ *** Generating DNAnexus App Template... ***
+ 
+ Your app specification has been written to the dxapp.json file. You can
+ specify more app options by editing this file directly (see
+ https://wiki.dnanexus.com/Developer-Portal for complete documentation).
+ 
+ Created files:
+      findNi/Readme.developer.md
+      findNi/Readme.md
+      findNi/dxapp.json
+      findNi/resources/
+      findNi/src/
+      findNi/src/findNi.sh
+      findNi/test/
+ 
+ App directory created!  See https://wiki.dnanexus.com/Developer-Portal for
+ tutorials on how to modify these files, or run "dx build findNi" or "dx
+ build --create-app findNi" while logged in with dx.
+ 
+ Running the DNAnexus build utility will create an executable on the
+ DNAnexus platform.  Any files found in the resources directory will
+ be uploaded so that they will be present in the root directory when the
+ executable is run.
+ 
+</code></pre>
+
+Since the wizard is interactive, I have already performed this step and the example 
+directory contains a copy of the output:
+
+```{bash}
+cp -R ../examples/findNi_original ./ex/findNi
+```
+
+# Modifying the App: {#modTheApp}
+
+The app produced by the wizard is very minimal, it doesn't actually DO anything.
+
+```{bash}
+ls ./ex/findNi/
+```
+```{bash}
+ls ./ex/findNi/src
+```
+
+The main files that you will need to modify are the dxapp.json file:
+
+```{bash}
+cat ./ex/findNi/dxapp.json
+```
+
+and also the bash script in the src directory:
+
+```{bash}
+cat ./ex/findNi/src/findNi.sh
+```
+
+I have already generated new versions of these files.
+
+For the json file, I just added some dependencies just to show how
+one would do that. In this case I told the VM to install tabix and openJDK.
+Note: I don't actually need them in this example.
+
+```{bash}
+cp ../examples/files/dxapp.v2.json ./ex/findNi/dxapp.json
+cat ./ex/findNi/dxapp.json
+```
+
+Next we write the script itself. The main function gets executed
+once the virtual machine is spun up and everything is installed and 
+prepped. Note that it sets a bunch of environment variables that
+link to the input files.
+
+The program below runs through the provided words file and returns a 
+file containing all the words that begin with "ni".
+
+```{bash}
+cp ../examples/files/findNi.v2.bash ./ex/findNi/src/findNi.sh
+cat ./ex/findNi/src/findNi.sh
+```
+
+# Building the App: {#buildApp}
+
+Now we have to "build" the app, which packages up the app and uploads it to your current project
+
+```{bash}
+cd ./ex/
+dx build -f findNi
+```
+
+# Uploading Input Files {#uploadInput}
+
+Before we can run our new app, first we need to upload an input file. For this we 
+use the upload command:
+
+```{bash}
+dx upload ../examples/indata/linux.words.txt --brief --path /test/linux.words.txt
+```
+
+# Running the software {#run}
+
+Before we can run our new app, first we need to upload an input file. For this we 
+use the upload command:
+
+    dx run findNi -i wordsFile=/test/linux.words.txt --destination /test/
+
+# Downloading results {#dlres}
+
+We can now download the results using the dx download command:
+
+```{bash}
+dx download /test/words.that.begin.with.ni.txt
+#Let's see the first 50 words:
+cat words.that.begin.with.ni.txt | head -n50
+```
+
+# Other useful commands: {#misccmd}
+
+You can use cat to quickly preview files:
+
+```{bash}
+dx cat /test/words.that.begin.with.ni.txt | head -n10
+```
+
+```{bash}
+set -x 
+dx describe /test/words.that.begin.with.ni.txt
+```
+
+    dx watch <jobid>
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# Legal
+
+
+This document and all relevant documentation is "United States Government Work" under he terms of the United States Copyright Act. It was written as part of the authors' official duties for the United States Government and thus vArmyKnife cannot be copyrighted. This software is freely available to the public for use without a copyright notice. Restrictions cannot be placed on its present or future use.
+
+Although all reasonable efforts have been taken to ensure the accuracy and reliability of the software, documentation, and data, the National Human Genome Research Institute (NHGRI), the National Cancer Institute (NCI) and the U.S. Government does not and cannot warrant the performance or results that may be obtained by using this software or data. NHGRI, NCI and the U.S. Government disclaims all warranties as to performance, merchantability or fitness for any particular purpose.
+
+In any work or product derived from this material, proper attribution of the authors as the source of the software or data may be made, using "NCI Division of Cancer Epidemiology and Genetics, Human Genetics Program" as the citation.
+
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+
+<!--chapter:end:dnaNexusTutorial.SWH.2019.09.Rmd-->
+
+--- 
+title: "DNAnexus Command Line Interface"
+author: "Stephen Hartley, PhD"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: report
+geometry: margin=0.75in
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: hartleys/vArmyKnife
+description: "A tutorial in the use of the DNA nexus command line interface (CLI)."
+---
+
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# Setup {#setup}
+
+First we have to load the DNAnexus command line interface utility. Both CCAD and Biowulf have it installed as a module.
+
+```{bash}
+#CCAD:
+module load dx
+#BIOWULF:
+#module load DNAnexus
+```
+
+Next we have to login, select a project, and 
+
+```{bash}
+#Log in (only have to do this the first time)
+#dx login
+
+#See what projects you have access to:
+dx find projects
+
+#Select the project you want from the above list:
+dx select project-FbvPXyQ0pgP1PQbkJG1vfQpz
+
+```
+
+Once dx is loaded and a project is selected, you can use many standard linux commands on the project by prefacing the command with "dx"
+
+```{bash}
+dx ls
+dx cd test
+dx cd ..
+
+dx mkdir test2
+dx rmdir test2
+```
+
+For a full list of available commands:
+
+```{bash}
+dx help all
+```
+
+# The DNANexus Web Interface:  {#web}
+
+```{r, echo = FALSE, fig.cap = 'A figure caption.'}
+knitr::include_graphics("img/dnaNexus.frontpage.PNG")
+```
+
+# A Simple Example:  {#example}
+
+We are going to do a very simple example in which we upload some data, run a program on it, and then download the result.
+
+Say we want to extract all the dictionary words that begin with "ni".
+
+# The App Builder Wizard: {#wiz}
+
+The first step is to create a new App. You can generate the files from a template, write them yourself, or 
+you can use the dx app creation wizard. For your first project, I recommend the last option.
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash nobr"></code></pre></div>
+<pre><code>
+dx-app-wizard
+ DNAnexus App Wizard, API v1.0.0
+ 
+ Basic Metadata
+ 
+ Please enter basic metadata fields that will be used to describe your app.
+ Optional fields are denoted by options with square brackets.  At the end of
+ this wizard, the files necessary for building your app will be generated
+ from the answers you provide.
+ 
+ The name of your app must be unique on the DNAnexus platform.
+ After creating your app for the first time, you will be able to publish new
+ versions using the same app name.  App names are restricted to alphanumeric
+ characters (a-z, A-Z, 0-9), and the characters ".", "_", and "-".
+ App Name: <span style="color: red"> findNi </span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ The title, if provided, is what is shown as the name of your app on
+ the website.  It can be any valid UTF-8 string.
+ Title []: <span style="color: red"> Find Ni </span>
+ 
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ 
+ The summary of your app is a short phrase or one-line description
+ of what your app does.  It can be any UTF-8 human-readable string.
+ Summary []: <span style="color: red"> Finds words that begin with ni</span>
+ 
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ 
+ You can publish multiple versions of your app, and the version of
+ your app is a string with which to tag a particular version.  We encourage
+ the use of Semantic Versioning for labeling your apps (see
+ http://semver.org/ for more details).
+ Version [0.0.1]: <span style="color: red"> 0.0.1</span>
+ 
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ 
+ Input Specification
+ 
+ You will now be prompted for each input parameter to your app.  Each
+ parameter should have a unique name that uses only the underscore "_" and
+ alphanumeric characters, and does not start with a number.
+ 
+ 1st input name (&lt;ENTER&gt; to finish): <span style="color: red"> wordsFile</span>
+ Label (optional human-readable name) []: <span style="color: red"> File of all words</span>
+ Your input parameter must be of one of the following classes:
+ applet         array:file     array:record   file           int
+ array:applet   array:float    array:string   float          record
+ array:boolean  array:int      boolean        hash           string
+ 
+ Choose a class (&lt;TAB&gt; twice for choices): <span style="color: red"> file</span>
+ This is an optional parameter [y/n]: <span style="color: red"> n</span>
+ 
+ 2nd input name (&lt;ENTER&gt; to finish):
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Output Specification
+ 
+ You will now be prompted for each output parameter of your app.  Each
+ parameter should have a unique name that uses only the underscore "_" and
+ alphanumeric characters, and does not start with a number.
+ 
+ 1st output name (&lt;ENTER&gt; to finish): <span style="color: red"> outfile</span>
+ Label (optional human-readable name) []: <span style="color: red"> Output file of words</span>
+ Choose a class (&lt;TAB&gt; twice for choices): <span style="color: red"> file</span>
+ 
+ 2nd output name (&lt;ENTER&gt; to finish):
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Timeout Policy
+ 
+ Set a timeout policy for your app. Any single entry point of the
+ app that runs longer than the specified timeout will fail with a
+ TimeoutExceeded error. Enter an int greater than 0 with a single-letter
+ suffix (m=minutes, h=hours, d=days) (e.g. "48h").
+ Timeout policy [48h]: <span style="color: red"> 48h</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Template Options
+ 
+ You can write your app in any programming language, but we provide
+ templates for the following supported languages: Python, bash
+ Programming language: <span style="color: red"> bash</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Access Permissions
+ If you request these extra permissions for your app, users will see this
+ fact when launching your app, and certain other restrictions will apply.
+ For more information, see
+ https://wiki.dnanexus.com/App-Permissions.
+ 
+ Access to the Internet (other than accessing the DNAnexus API).
+ Will this app need access to the Internet? [y/N]: <span style="color: red"> N</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ Direct access to the parent project. This is not needed if your app
+ specifies outputs,     which will be copied into the project after it's
+ done running.
+ Will this app need access to the parent project? [y/N]: <span style="color: red"> N</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ System Requirements
+ 
+ Common AWS instance types:
+ +--------------------------------------------+
+ |Name         |Memory_GB|Storage_GB|CPU_Cores|
+ +-------------+---------+----------+---------|
+ |mem1_ssd1_x2 |3.8      |32        |2        |
+ |mem1_ssd1_x4 |7.5      |80        |4        |
+ |mem1_ssd1_x8 |15.0     |160       |8        |
+ |mem1_ssd1_x16|30.0     |320       |16       |
+ |mem1_ssd1_x32|60.0     |640       |32       |
+ |mem2_ssd1_x2 |7.5      |32        |2        |
+ |mem2_ssd1_x4 |15.0     |80        |4        |
+ |mem2_ssd1_x8 |30.0     |160       |8        |
+ |mem3_ssd1_x2 |15.0     |32        |2        |
+ |mem3_ssd1_x4 |30.5     |80        |4        |
+ |mem3_ssd1_x8 |61.0     |160       |8        |
+ |mem3_ssd1_x16|122.0    |320       |16       |
+ |mem3_ssd1_x32|244.0    |640       |32       |
+ |mem1_ssd2_x2 |3.8      |160       |2        |
+ |mem1_ssd2_x4 |7.5      |320       |4        |
+ |mem1_ssd2_x8 |15       |640       |8        |
+ |mem1_ssd2_x16|30       |1280      |16       |
+ |mem1_ssd2_x36|60       |2880      |36       |
+ +--------------------------------------------+
+ Common Azure instance types:
+ +--------------------------------------------------+
+ |Name               |Memory_GB|Storage_GB|CPU_Cores|
+ +-------------------+---------+----------+---------|
+ |azure:mem1_ssd1_x2 |3.9      |32        |2        |
+ |azure:mem1_ssd1_x4 |7.8      |64        |4        |
+ |azure:mem1_ssd1_x8 |15.7     |128       |8        |
+ |azure:mem1_ssd1_x16|31.4     |256       |16       |
+ |azure:mem2_ssd1_x1 |3.5      |128       |1        |
+ |azure:mem2_ssd1_x2 |7.0      |128       |2        |
+ |azure:mem2_ssd1_x4 |14.0     |128       |4        |
+ |azure:mem2_ssd1_x8 |28.0     |256       |8        |
+ |azure:mem2_ssd1_x16|56.0     |512       |16       |
+ |azure:mem3_ssd1_x2 |14.0     |128       |2        |
+ |azure:mem3_ssd1_x4 |28.0     |128       |4        |
+ |azure:mem3_ssd1_x8 |56.0     |256       |8        |
+ |azure:mem3_ssd1_x16|112.0    |512       |16       |
+ |azure:mem3_ssd1_x20|140.0    |640       |20       |
+ |azure:mem4_ssd1_x2 |28.0     |128       |2        |
+ |azure:mem4_ssd1_x4 |56.0     |128       |4        |
+ |azure:mem4_ssd1_x8 |112.0    |256       |8        |
+ |azure:mem4_ssd1_x16|224      |512       |16       |
+ |azure:mem4_ssd1_x32|448      |1024      |32       |
+ +--------------------------------------------------+
+ Default instance type: The instance type you select here will apply
+ to all entry points in your app unless you override it. See
+ https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types
+ for more information.
+ Choose an instance type for your app [mem1_ssd1_x4]: <span style="color: red"> mem1_ssd_x4</span>
+</code></pre>
+<div class="sourceCode nobr"><pre class="sourceCode bash nobr"><code class="sourceCode bash nobr"></code></pre></div><pre><code>
+ *** Generating DNAnexus App Template... ***
+ 
+ Your app specification has been written to the dxapp.json file. You can
+ specify more app options by editing this file directly (see
+ https://wiki.dnanexus.com/Developer-Portal for complete documentation).
+ 
+ Created files:
+      findNi/Readme.developer.md
+      findNi/Readme.md
+      findNi/dxapp.json
+      findNi/resources/
+      findNi/src/
+      findNi/src/findNi.sh
+      findNi/test/
+ 
+ App directory created!  See https://wiki.dnanexus.com/Developer-Portal for
+ tutorials on how to modify these files, or run "dx build findNi" or "dx
+ build --create-app findNi" while logged in with dx.
+ 
+ Running the DNAnexus build utility will create an executable on the
+ DNAnexus platform.  Any files found in the resources directory will
+ be uploaded so that they will be present in the root directory when the
+ executable is run.
+ 
+</code></pre>
+
+Since the wizard is interactive, I have already performed this step and the example 
+directory contains a copy of the output:
+
+```{bash}
+cp -R ../examples/findNi_original ./ex/findNi
+```
+
+# Modifying the App: {#modTheApp}
+
+The app produced by the wizard is very minimal, it doesn't actually DO anything.
+
+```{bash}
+ls ./ex/findNi/
+```
+```{bash}
+ls ./ex/findNi/src
+```
+
+The main files that you will need to modify are the dxapp.json file:
+
+```{bash}
+cat ./ex/findNi/dxapp.json
+```
+
+and also the bash script in the src directory:
+
+```{bash}
+cat ./ex/findNi/src/findNi.sh
+```
+
+I have already generated new versions of these files.
+
+For the json file, I just added some dependencies just to show how
+one would do that. In this case I told the VM to install tabix and openJDK.
+Note: I don't actually need them in this example.
+
+```{bash}
+cp ../examples/files/dxapp.v2.json ./ex/findNi/dxapp.json
+cat ./ex/findNi/dxapp.json
+```
+
+Next we write the script itself. The main function gets executed
+once the virtual machine is spun up and everything is installed and 
+prepped. Note that it sets a bunch of environment variables that
+link to the input files.
+
+The program below runs through the provided words file and returns a 
+file containing all the words that begin with "ni".
+
+```{bash}
+cp ../examples/files/findNi.v2.bash ./ex/findNi/src/findNi.sh
+cat ./ex/findNi/src/findNi.sh
+```
+
+# Building the App: {#buildApp}
+
+Now we have to "build" the app, which packages up the app and uploads it to your current project
+
+```{bash}
+cd ./ex/
+dx build -f findNi
+```
+
+# Uploading Input Files {#uploadInput}
+
+Before we can run our new app, first we need to upload an input file. For this we 
+use the upload command:
+
+```{bash}
+dx upload ../examples/indata/linux.words.txt --brief --path /test/linux.words.txt
+```
+
+# Running the software {#run}
+
+Before we can run our new app, first we need to upload an input file. For this we 
+use the upload command:
+
+    dx run findNi -i wordsFile=/test/linux.words.txt --destination /test/
+
+# Downloading results {#dlres}
+
+We can now download the results using the dx download command:
+
+```{bash}
+dx download /test/words.that.begin.with.ni.txt
+#Let's see the first 50 words:
+cat words.that.begin.with.ni.txt | head -n50
+```
+
+# Other useful commands: {#misccmd}
+
+You can use cat to quickly preview files:
+
+```{bash}
+dx cat /test/words.that.begin.with.ni.txt | head -n10
+```
+
+```{bash}
+set -x 
+dx describe /test/words.that.begin.with.ni.txt
+```
+
+The resources directory: you can add software installations to your virtual machine by adding them to the resources
+directory in the applet directory. The entire resources directory will be copied to the filesystem root on the 
+cloud virtual machine.
+
+You can place most software binaries in the resources/usr/bin directory and just run them that way. For example, to install samtools:
+
+    +-- Applet dir
+    ¦   +-- src
+    ¦   +-- dxapp.json
+    ¦   +-- resources
+    ¦       +-- usr
+    ¦           +-- bin
+    ¦               +-- < samtools binary >
+
+
+
+    
+    dx watch <jobid>
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# Legal
+
+
+This document and all relevant documentation is "United States Government Work" under he terms of the United States Copyright Act. It was written as part of the authors' official duties for the United States Government and thus vArmyKnife cannot be copyrighted. This software is freely available to the public for use without a copyright notice. Restrictions cannot be placed on its present or future use.
+
+Although all reasonable efforts have been taken to ensure the accuracy and reliability of the software, documentation, and data, the National Human Genome Research Institute (NHGRI), the National Cancer Institute (NCI) and the U.S. Government does not and cannot warrant the performance or results that may be obtained by using this software or data. NHGRI, NCI and the U.S. Government disclaims all warranties as to performance, merchantability or fitness for any particular purpose.
+
+In any work or product derived from this material, proper attribution of the authors as the source of the software or data may be made, using "NCI Division of Cancer Epidemiology and Genetics, Human Genetics Program" as the citation.
+
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+
+<!--chapter:end:dnaNexusTutorial.SWH.2019.09.scrap.Rmd-->
+
