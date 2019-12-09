@@ -2,3 +2,444 @@
 ###################
 
 git add:
+
+
+git status:
+    # On branch master
+    # Your branch is ahead of 'origin/master' by 1 commit.
+    #
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #	new file:   build/_book/00index.html
+    #	new file:   build/_book/1-1-hi.html
+    #	new file:   build/_book/1-2-prepreintro2.html
+    #	new file:   build/_book/1-3-targetAudience.html
+    #	new file:   build/_book/1-4-targetAudienceNeeds.html
+    #	new file:   build/_book/1-MAINTITLE.html
+    #	new file:   build/_book/10-1-miscmisccmd2.html
+    #	new file:   build/_book/10-questions.html
+    #	new file:   build/_book/11-legal.html
+    #	new file:   build/_book/2-1-whycloud2.html
+    #	new file:   build/_book/2-2-whycloud3.html
+    #	new file:   build/_book/2-whycloud.html
+    #	new file:   build/_book/3-dnanexusIntro.html
+    #	new file:   build/_book/4-1-getStarted1.html
+    #	new file:   build/_book/4-2-getStarted2.html
+    #	new file:   build/_book/4-3-getStarted3.html
+    #	new file:   build/_book/4-4-getStarted4.html
+    #	new file:   build/_book/4-5-getStarted5.html
+    #	new file:   build/_book/4-6-getStarted6.html
+    #	new file:   build/_book/4-getStarted.html
+    #	new file:   build/_book/5-1-dxweb0.html
+    #	new file:   build/_book/5-2-dxweb1.html
+    #	new file:   build/_book/5-3-dxweb2.html
+    #	new file:   build/_book/5-4-dxweb4.html
+    #	new file:   build/_book/5-CMDvsGUI.html
+    #	new file:   build/_book/6-1-dx1.html
+    #	new file:   build/_book/6-2-dx1a.html
+    #	new file:   build/_book/6-3-dx1b.html
+    #	new file:   build/_book/6-4-dx2.html
+    #	new file:   build/_book/6-5-dx3.html
+    #	new file:   build/_book/6-dx0.html
+    #	new file:   build/_book/7-1-dnaNexusAppsGATK1.html
+    #	new file:   build/_book/7-2-dnaNexusAppsGATK2.html
+    #	new file:   build/_book/7-3-dnaNexusAppsGATK3.html
+    #	new file:   build/_book/7-4-dnaNexusAppsGATK4.html
+    #	new file:   build/_book/7-dnanexusNotes.html
+    #	new file:   build/_book/8-1-dnanexusCmdLine1.html
+    #	new file:   build/_book/8-2-rbinfotk.html
+    #	new file:   build/_book/8-3-rbinfotkr.html
+    #	new file:   build/_book/8-dnanexusCmdLine0.html
+    #	new file:   build/_book/9-1-appMon2.html
+    #	new file:   build/_book/9-2-appMon3.html
+    #	new file:   build/_book/9-3-appMon4.html
+    #	new file:   build/_book/9-appMon1.html
+    #	new file:   build/_book/custom.css
+    #	new file:   build/_book/img/Biowulf-CPU-Use.png
+    #	new file:   build/_book/img/Sequencing_Cost_per_Megabase_August2019.jpg
+    #	new file:   build/_book/img/appMonitor.1.png
+    #	new file:   build/_book/img/appMonitor.2.png
+    #	new file:   build/_book/img/appMonitor.3.png
+    #	new file:   build/_book/img/appMonitor.4.png
+    #	new file:   build/_book/img/chooseToolMenu.png
+    #	new file:   build/_book/img/dx.login.png
+    #	new file:   build/_book/img/dx.newProject.PNG
+    #	new file:   build/_book/img/dx.newProjectDiag.PNG
+    #	new file:   build/_book/img/dx.shareProject.PNG
+    #	new file:   build/_book/img/dx.shareProjectWithMe.png
+    #	new file:   build/_book/img/dx.workstation.1.png
+    #	new file:   build/_book/img/gatk.1.selectFile.PNG
+    #	new file:   build/_book/img/gatk.2.selectfile.PNG
+    #	new file:   build/_book/img/gatk.3.run.PNG
+    #	new file:   build/_book/img/web.0.png
+    #	new file:   build/_book/img/web.2.PNG
+    #	new file:   build/_book/img/web.3.PNG
+    #	new file:   build/_book/img/web.5.PNG
+    #	new file:   build/_book/index.html
+    #	modified:   build/_book/references.html
+    #	new file:   build/_book/resizeToFit.js
+    #	modified:   build/_book/search_index.json
+    #	new file:   build/_bookdown.yml
+    #	modified:   build/buildScripts.bash
+    #	modified:   build/buildScripts/buildManual.R
+    #	new file:   build/custom.css
+    #	modified:   build/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	new file:   build/img/AppMenu.PNG
+    #	new file:   build/img/Biowulf-CPU-Use.png
+    #	new file:   build/img/Biowulf-Utilization.png
+    #	new file:   build/img/GATK.input.app.PNG
+    #	new file:   build/img/Sequencing_Cost_per_Megabase_August2019.jpg
+    #	new file:   build/img/Thumbs.db
+    #	new file:   build/img/appMonitor.1.png
+    #	new file:   build/img/appMonitor.2.png
+    #	new file:   build/img/appMonitor.3.png
+    #	new file:   build/img/appMonitor.4.png
+    #	new file:   build/img/chooseToolMenu.png
+    #	new file:   build/img/dx.login.png
+    #	new file:   build/img/dx.newProject.PNG
+    #	new file:   build/img/dx.newProjectDiag.PNG
+    #	new file:   build/img/dx.shareProject.PNG
+    #	new file:   build/img/dx.shareProjectWithMe.png
+    #	new file:   build/img/dx.workstation.1.png
+    #	new file:   build/img/gatk.1.selectFile.PNG
+    #	new file:   build/img/gatk.2.selectfile.PNG
+    #	new file:   build/img/gatk.3.run.PNG
+    #	new file:   build/img/pricing.png
+    #	new file:   build/img/web.0.png
+    #	new file:   build/img/web.1.PNG
+    #	new file:   build/img/web.2.PNG
+    #	new file:   build/img/web.3.PNG
+    #	new file:   build/img/web.4.PNG
+    #	new file:   build/img/web.5.PNG
+    #	new file:   build/resizeScript.html
+    #	new file:   build/resizeToFit.js
+    #	modified:   commitInfo.rc
+    #	new file:   commitLogs/.1.1.log
+    #	new file:   commitLogs/.1.log
+    #	new file:   commitLogs/.log
+    #	modified:   commitLogs/0.0.4.log
+    #	new file:   commitLogs/0.1.1.log
+    #	new file:   commitLogs/commitInfo..1.1.rc
+    #	new file:   commitLogs/commitInfo..1.rc
+    #	new file:   commitLogs/commitInfo..rc
+    #	new file:   commitLogs/commitInfo.0.0.4.rc
+    #	new file:   commitLogs/commitInfo.0.1.0.rc
+    #	modified:   commitToGithub.bash
+    #	new file:   docs/1-1-hi.html
+    #	new file:   docs/1-2-prepreintro2.html
+    #	new file:   docs/1-3-targetAudience.html
+    #	new file:   docs/1-4-targetAudienceNeeds.html
+    #	new file:   docs/1-MAINTITLE.html
+    #	new file:   docs/10-1-miscmisccmd2.html
+    #	new file:   docs/10-1-wiz.html
+    #	new file:   docs/10-2-modTheApp.html
+    #	new file:   docs/10-3-buildApp.html
+    #	new file:   docs/10-4-uploadInput.html
+    #	new file:   docs/10-5-run.html
+    #	new file:   docs/10-6-dlres.html
+    #	new file:   docs/10-7-selectProject.html
+    #	new file:   docs/10-creatingNewApp.html
+    #	new file:   docs/10-questions.html
+    #	new file:   docs/11-legal.html
+    #	new file:   docs/2-1-whycloud2.html
+    #	new file:   docs/2-2-whycloud3.html
+    #	new file:   docs/2-whycloud.html
+    #	new file:   docs/3-dnanexusIntro.html
+    #	new file:   docs/4-1-getStarted1.html
+    #	new file:   docs/4-2-getStarted2.html
+    #	new file:   docs/4-3-getStarted3.html
+    #	new file:   docs/4-4-getStarted4.html
+    #	new file:   docs/4-5-getStarted5.html
+    #	new file:   docs/4-6-getStarted6.html
+    #	new file:   docs/4-getStarted.html
+    #	new file:   docs/5-1-dxweb0.html
+    #	new file:   docs/5-2-dxweb1.html
+    #	new file:   docs/5-3-dxweb2.html
+    #	new file:   docs/5-4-dxweb4.html
+    #	new file:   docs/5-CMDvsGUI.html
+    #	new file:   docs/6-1-dx1.html
+    #	new file:   docs/6-2-dx1a.html
+    #	new file:   docs/6-2-dx2.html
+    #	new file:   docs/6-3-dx1b.html
+    #	new file:   docs/6-3-dx3.html
+    #	new file:   docs/6-4-dx2.html
+    #	new file:   docs/6-5-dx3.html
+    #	new file:   docs/6-dx0.html
+    #	new file:   docs/7-1-dnaNexusAppsGATK1.html
+    #	new file:   docs/7-2-dnaNexusAppsGATK2.html
+    #	new file:   docs/7-3-dnaNexusAppsGATK3.html
+    #	new file:   docs/7-4-dnaNexusAppsGATK4.html
+    #	new file:   docs/7-dnanexusNotes.html
+    #	new file:   docs/8-1-dnanexusCmdLine.html
+    #	new file:   docs/8-1-dnanexusCmdLine1.html
+    #	new file:   docs/8-2-rbinfotk.html
+    #	new file:   docs/8-3-rbinfotkr.html
+    #	new file:   docs/8-dnanexusCmdLine.html
+    #	new file:   docs/8-dnanexusCmdLine0.html
+    #	new file:   docs/9-1-appMon2.html
+    #	new file:   docs/9-2-appMon3.html
+    #	new file:   docs/9-3-appMon4.html
+    #	new file:   docs/9-4-misccmd2.html
+    #	new file:   docs/9-appMon1.html
+    #	new file:   docs/custom.css
+    #	new file:   docs/img/Biowulf-CPU-Use.png
+    #	new file:   docs/img/Sequencing_Cost_per_Megabase_August2019.jpg
+    #	new file:   docs/img/appMonitor.1.png
+    #	new file:   docs/img/appMonitor.2.png
+    #	new file:   docs/img/appMonitor.3.png
+    #	new file:   docs/img/appMonitor.4.png
+    #	new file:   docs/img/chooseToolMenu.png
+    #	new file:   docs/img/dx.login.png
+    #	new file:   docs/img/dx.newProject.PNG
+    #	new file:   docs/img/dx.newProjectDiag.PNG
+    #	new file:   docs/img/dx.shareProject.PNG
+    #	new file:   docs/img/dx.shareProjectWithMe.png
+    #	new file:   docs/img/dx.workstation.1.png
+    #	new file:   docs/img/gatk.1.selectFile.PNG
+    #	new file:   docs/img/gatk.2.selectfile.PNG
+    #	new file:   docs/img/gatk.3.run.PNG
+    #	new file:   docs/img/web.0.png
+    #	new file:   docs/img/web.2.PNG
+    #	new file:   docs/img/web.3.PNG
+    #	new file:   docs/img/web.5.PNG
+    #	new file:   docs/index.html
+    #	modified:   docs/references.html
+    #	new file:   docs/resizeToFit.js
+    #	modified:   docs/search_index.json
+    #	new file:   scrap.bash
+    #	new file:   scrap/codeblockwiz.2.txt
+    #	new file:   scrap/codeblockwiz.txt
+    #	new file:   scrap/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	new file:   scrap/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+    #
+    # Changes not staged for commit:
+    #   (use "git add/rm <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #	deleted:    build/_book/_main.pdf
+    #	deleted:    build/_book/buildApp.html
+    #	deleted:    build/_book/dlres.html
+    #	deleted:    build/_book/example.html
+    #	deleted:    build/_book/legal.html
+    #	deleted:    build/_book/misccmd.html
+    #	deleted:    build/_book/modTheApp.html
+    #	deleted:    build/_book/run.html
+    #	deleted:    build/_book/setup.html
+    #	deleted:    build/_book/styles.css
+    #	deleted:    build/_book/styles.js
+    #	deleted:    build/_book/uploadInput.html
+    #	deleted:    build/_book/web.html
+    #	deleted:    build/_book/wiz.html
+    #	deleted:    build/_main.Rmd
+    #	deleted:    build/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+    #	deleted:    build/scrap/codeblockwiz.2.txt
+    #	deleted:    build/scrap/codeblockwiz.txt
+    #	deleted:    build/scrap/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	modified:   commitLogs/0.1.1.log
+    #	deleted:    docs/_main.pdf
+    #
+
+
+git commit:
+    [master 404151f] 0.1.1
+     201 files changed, 30795 insertions(+), 112 deletions(-)
+     create mode 120000 build/_book/00index.html
+     create mode 100644 build/_book/1-1-hi.html
+     create mode 100644 build/_book/1-2-prepreintro2.html
+     create mode 100644 build/_book/1-3-targetAudience.html
+     create mode 100644 build/_book/1-4-targetAudienceNeeds.html
+     create mode 100644 build/_book/1-MAINTITLE.html
+     create mode 100644 build/_book/10-1-miscmisccmd2.html
+     create mode 100644 build/_book/10-questions.html
+     create mode 100644 build/_book/11-legal.html
+     create mode 100644 build/_book/2-1-whycloud2.html
+     create mode 100644 build/_book/2-2-whycloud3.html
+     create mode 100644 build/_book/2-whycloud.html
+     create mode 100644 build/_book/3-dnanexusIntro.html
+     create mode 100644 build/_book/4-1-getStarted1.html
+     create mode 100644 build/_book/4-2-getStarted2.html
+     create mode 100644 build/_book/4-3-getStarted3.html
+     create mode 100644 build/_book/4-4-getStarted4.html
+     create mode 100644 build/_book/4-5-getStarted5.html
+     create mode 100644 build/_book/4-6-getStarted6.html
+     create mode 100644 build/_book/4-getStarted.html
+     create mode 100644 build/_book/5-1-dxweb0.html
+     create mode 100644 build/_book/5-2-dxweb1.html
+     create mode 100644 build/_book/5-3-dxweb2.html
+     create mode 100644 build/_book/5-4-dxweb4.html
+     create mode 100644 build/_book/5-CMDvsGUI.html
+     create mode 100644 build/_book/6-1-dx1.html
+     create mode 100644 build/_book/6-2-dx1a.html
+     create mode 100644 build/_book/6-3-dx1b.html
+     create mode 100644 build/_book/6-4-dx2.html
+     create mode 100644 build/_book/6-5-dx3.html
+     create mode 100644 build/_book/6-dx0.html
+     create mode 100644 build/_book/7-1-dnaNexusAppsGATK1.html
+     create mode 100644 build/_book/7-2-dnaNexusAppsGATK2.html
+     create mode 100644 build/_book/7-3-dnaNexusAppsGATK3.html
+     create mode 100644 build/_book/7-4-dnaNexusAppsGATK4.html
+     create mode 100644 build/_book/7-dnanexusNotes.html
+     create mode 100644 build/_book/8-1-dnanexusCmdLine1.html
+     create mode 100644 build/_book/8-2-rbinfotk.html
+     create mode 100644 build/_book/8-3-rbinfotkr.html
+     create mode 100644 build/_book/8-dnanexusCmdLine0.html
+     create mode 100644 build/_book/9-1-appMon2.html
+     create mode 100644 build/_book/9-2-appMon3.html
+     create mode 100644 build/_book/9-3-appMon4.html
+     create mode 100644 build/_book/9-appMon1.html
+     create mode 100644 build/_book/custom.css
+     create mode 100644 build/_book/img/Biowulf-CPU-Use.png
+     create mode 100644 build/_book/img/Sequencing_Cost_per_Megabase_August2019.jpg
+     create mode 100644 build/_book/img/appMonitor.1.png
+     create mode 100644 build/_book/img/appMonitor.2.png
+     create mode 100644 build/_book/img/appMonitor.3.png
+     create mode 100644 build/_book/img/appMonitor.4.png
+     create mode 100644 build/_book/img/chooseToolMenu.png
+     create mode 100644 build/_book/img/dx.login.png
+     create mode 100644 build/_book/img/dx.newProject.PNG
+     create mode 100644 build/_book/img/dx.newProjectDiag.PNG
+     create mode 100644 build/_book/img/dx.shareProject.PNG
+     create mode 100644 build/_book/img/dx.shareProjectWithMe.png
+     create mode 100644 build/_book/img/dx.workstation.1.png
+     create mode 100644 build/_book/img/gatk.1.selectFile.PNG
+     create mode 100644 build/_book/img/gatk.2.selectfile.PNG
+     create mode 100644 build/_book/img/gatk.3.run.PNG
+     create mode 100644 build/_book/img/web.0.png
+     create mode 100644 build/_book/img/web.2.PNG
+     create mode 100644 build/_book/img/web.3.PNG
+     create mode 100644 build/_book/img/web.5.PNG
+     create mode 120000 build/_book/index.html
+     create mode 100644 build/_book/resizeToFit.js
+     rewrite build/_book/search_index.json (99%)
+     create mode 100644 build/_bookdown.yml
+     create mode 100644 build/custom.css
+     create mode 100644 build/img/AppMenu.PNG
+     create mode 100644 build/img/Biowulf-CPU-Use.png
+     create mode 100644 build/img/Biowulf-Utilization.png
+     create mode 100644 build/img/GATK.input.app.PNG
+     create mode 100644 build/img/Sequencing_Cost_per_Megabase_August2019.jpg
+     create mode 100644 build/img/Thumbs.db
+     create mode 100644 build/img/appMonitor.1.png
+     create mode 100644 build/img/appMonitor.2.png
+     create mode 100644 build/img/appMonitor.3.png
+     create mode 100644 build/img/appMonitor.4.png
+     create mode 100644 build/img/chooseToolMenu.png
+     create mode 100644 build/img/dx.login.png
+     create mode 100644 build/img/dx.newProject.PNG
+     create mode 100644 build/img/dx.newProjectDiag.PNG
+     create mode 100644 build/img/dx.shareProject.PNG
+     create mode 100644 build/img/dx.shareProjectWithMe.png
+     create mode 100644 build/img/dx.workstation.1.png
+     create mode 100644 build/img/gatk.1.selectFile.PNG
+     create mode 100644 build/img/gatk.2.selectfile.PNG
+     create mode 100644 build/img/gatk.3.run.PNG
+     create mode 100644 build/img/pricing.png
+     create mode 100644 build/img/web.0.png
+     create mode 100644 build/img/web.1.PNG
+     create mode 100644 build/img/web.2.PNG
+     create mode 100644 build/img/web.3.PNG
+     create mode 100644 build/img/web.4.PNG
+     create mode 100644 build/img/web.5.PNG
+     create mode 100644 build/resizeScript.html
+     create mode 100644 build/resizeToFit.js
+     create mode 100644 commitLogs/.1.1.log
+     create mode 100644 commitLogs/.1.log
+     create mode 100644 commitLogs/.log
+     create mode 100644 commitLogs/0.1.1.log
+     create mode 100644 commitLogs/commitInfo..1.1.rc
+     create mode 100644 commitLogs/commitInfo..1.rc
+     create mode 100644 commitLogs/commitInfo..rc
+     create mode 100644 commitLogs/commitInfo.0.0.4.rc
+     create mode 100644 commitLogs/commitInfo.0.1.0.rc
+     create mode 100644 docs/1-1-hi.html
+     create mode 100644 docs/1-2-prepreintro2.html
+     create mode 100644 docs/1-3-targetAudience.html
+     create mode 100644 docs/1-4-targetAudienceNeeds.html
+     create mode 100644 docs/1-MAINTITLE.html
+     create mode 100644 docs/10-1-miscmisccmd2.html
+     create mode 100644 docs/10-1-wiz.html
+     create mode 100644 docs/10-2-modTheApp.html
+     create mode 100644 docs/10-3-buildApp.html
+     create mode 100644 docs/10-4-uploadInput.html
+     create mode 100644 docs/10-5-run.html
+     create mode 100644 docs/10-6-dlres.html
+     create mode 100644 docs/10-7-selectProject.html
+     create mode 100644 docs/10-creatingNewApp.html
+     create mode 100644 docs/10-questions.html
+     create mode 100644 docs/11-legal.html
+     create mode 100644 docs/2-1-whycloud2.html
+     create mode 100644 docs/2-2-whycloud3.html
+     create mode 100644 docs/2-whycloud.html
+     create mode 100644 docs/3-dnanexusIntro.html
+     create mode 100644 docs/4-1-getStarted1.html
+     create mode 100644 docs/4-2-getStarted2.html
+     create mode 100644 docs/4-3-getStarted3.html
+     create mode 100644 docs/4-4-getStarted4.html
+     create mode 100644 docs/4-5-getStarted5.html
+     create mode 100644 docs/4-6-getStarted6.html
+     create mode 100644 docs/4-getStarted.html
+     create mode 100644 docs/5-1-dxweb0.html
+     create mode 100644 docs/5-2-dxweb1.html
+     create mode 100644 docs/5-3-dxweb2.html
+     create mode 100644 docs/5-4-dxweb4.html
+     create mode 100644 docs/5-CMDvsGUI.html
+     create mode 100644 docs/6-1-dx1.html
+     create mode 100644 docs/6-2-dx1a.html
+     create mode 100644 docs/6-2-dx2.html
+     create mode 100644 docs/6-3-dx1b.html
+     create mode 100644 docs/6-3-dx3.html
+     create mode 100644 docs/6-4-dx2.html
+     create mode 100644 docs/6-5-dx3.html
+     create mode 100644 docs/6-dx0.html
+     create mode 100644 docs/7-1-dnaNexusAppsGATK1.html
+     create mode 100644 docs/7-2-dnaNexusAppsGATK2.html
+     create mode 100644 docs/7-3-dnaNexusAppsGATK3.html
+     create mode 100644 docs/7-4-dnaNexusAppsGATK4.html
+     create mode 100644 docs/7-dnanexusNotes.html
+     create mode 100644 docs/8-1-dnanexusCmdLine.html
+     create mode 100644 docs/8-1-dnanexusCmdLine1.html
+     create mode 100644 docs/8-2-rbinfotk.html
+     create mode 100644 docs/8-3-rbinfotkr.html
+     create mode 100644 docs/8-dnanexusCmdLine.html
+     create mode 100644 docs/8-dnanexusCmdLine0.html
+     create mode 100644 docs/9-1-appMon2.html
+     create mode 100644 docs/9-2-appMon3.html
+     create mode 100644 docs/9-3-appMon4.html
+     create mode 100644 docs/9-4-misccmd2.html
+     create mode 100644 docs/9-appMon1.html
+     create mode 100644 docs/custom.css
+     create mode 100644 docs/img/Biowulf-CPU-Use.png
+     create mode 100644 docs/img/Sequencing_Cost_per_Megabase_August2019.jpg
+     create mode 100644 docs/img/appMonitor.1.png
+     create mode 100644 docs/img/appMonitor.2.png
+     create mode 100644 docs/img/appMonitor.3.png
+     create mode 100644 docs/img/appMonitor.4.png
+     create mode 100644 docs/img/chooseToolMenu.png
+     create mode 100644 docs/img/dx.login.png
+     create mode 100644 docs/img/dx.newProject.PNG
+     create mode 100644 docs/img/dx.newProjectDiag.PNG
+     create mode 100644 docs/img/dx.shareProject.PNG
+     create mode 100644 docs/img/dx.shareProjectWithMe.png
+     create mode 100644 docs/img/dx.workstation.1.png
+     create mode 100644 docs/img/gatk.1.selectFile.PNG
+     create mode 100644 docs/img/gatk.2.selectfile.PNG
+     create mode 100644 docs/img/gatk.3.run.PNG
+     create mode 100644 docs/img/web.0.png
+     create mode 100644 docs/img/web.2.PNG
+     create mode 100644 docs/img/web.3.PNG
+     create mode 100644 docs/img/web.5.PNG
+     create mode 120000 docs/index.html
+     create mode 100644 docs/resizeToFit.js
+     rewrite docs/search_index.json (99%)
+     create mode 100644 scrap.bash
+     create mode 100644 scrap/codeblockwiz.2.txt
+     create mode 100644 scrap/codeblockwiz.txt
+     create mode 100644 scrap/dnaNexusTutorial.SWH.2019.09.Rmd
+     create mode 100644 scrap/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+
+
+git push:
+    fatal: Authentication failed
+    To https://github.com/hartleys/DnaNexusTutorial
+       6870e59..404151f  master -> master
