@@ -1,5 +1,5 @@
 --- 
-title: "DNAnexus Command Line Interface"
+title: "Introduction to DNA Nexus and Cloud Computing for Bioinformatics"
 author: "Stephen Hartley, PhD"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -12,67 +12,489 @@ link-citations: yes
 github-repo: hartleys/vArmyKnife
 description: "A tutorial in the use of the DNA nexus command line interface (CLI)."
 ---
+# Introduction to DNA Nexus and Cloud Computing for Bioinformatics {#MAINTITLE}
 
+This document is intended to provide a basic introduction to the use of the DNA Nexus cloud computing platform
+for biostats and bioinformatics.
+
+This document can be accessed online at:
+
+<font size="5"> [https://hartleys.github.io/DnaNexusTutorial/](https://hartleys.github.io/DnaNexusTutorial/) </font>
 
 <!-- ################################################################################################################ --> 
 <!-- ################################################################################################################ --> 
 <!-- ################################################################################################################ --> 
 
-# Setup {#setup}
+## Hi! {#hi}
 
-First we have to load the DNAnexus command line interface utility. Both CCAD and Biowulf have it installed as a module.
+I'm Steve Hartley, Staff Scientist to Stephen Chanock.
+I'm a bioinformaticist with a software engineering background. 
 
-```{bash}
-#CCAD:
-module load dx
-#BIOWULF:
-#module load DNAnexus
+Feel free to come to me with questions or problems about:
+
+* DNA Nexus
+* Other cloud platforms
+* Sequencing
+* Bioinformatics
+* Programming
+* Computer program won't compile / won't run / throws bizarre errors
+
+email me at:
+
+<font size="5"> stephen.hartley@nih.mail.gov</font>
+
+OR, drop by at:
+
+<font size="5"> Room 7E582 </font>
+
+## Target Audience: {#prepreintro2}
+
+This document/presentation is intended for people of practically any experience level, 
+but it will probably be most helpful for those who:
+
+ * Have basic familiarity with linux/bash/command-line.
+ * Hopefully know at least some python or R
+ * Have basically zero familiarity with anything cloud-related
+ * Want to run things on the cloud
+
+## Audience Experience Level: {#targetAudience}
+
+Which of you have:
+
+* Used a linux command line
+* Run jobs on Biowulf
+* Run an R or python script
+* Written an R or python script
+* Developed novel software that other people use
+* Run jobs on the DNA Nexus cloud
+* Run jobs on any cloud
+
+## Audience Needs: {#targetAudienceNeeds}
+
+(To get an idea of what the usage level is going to be for this platform) 
+Which of you feel you are currently:
+
+* Being slowed down by biowulf's limited compute availability (jobs take too long to start or to run)
+* Being slowed or limited by biowulf's storage availability (need more terabytes!)
+* Expect one or both of the above to be true at some point in the near future
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# Why use the cloud? {#whycloud}
+
+We're generating a lot of data now.
+
+```{r, echo = FALSE, fig.cap = '', out.height="500pt"}
+knitr::include_graphics("img/Sequencing_Cost_per_Megabase_August2019.jpg")
 ```
 
-Next we have to login, select a project, and 
+It's only going to get worse.
 
-```{bash}
-#Log in (only have to do this the first time)
-#dx login
+## Why use the cloud? {#whycloud2}
 
-#See what projects you have access to:
-dx find projects
+Biowulf is getting kinda crowded.
 
-#Select the project you want from the above list:
-dx select project-FbvPXyQ0pgP1PQbkJG1vfQpz
-
+```{r, echo = FALSE, fig.cap = '', out.height="500pt"}
+knitr::include_graphics("img/Biowulf-CPU-Use.png")
 ```
 
-Once dx is loaded and a project is selected, you can use many standard linux commands on the project by prefacing the command with "dx"
+## Why use the cloud? {#whycloud3}
 
+The Cloud offers advantages:
+
+* Less waiting: jobs start faster, and don't get clogged up during busy hours
+* Massive scalability: Submit thousands of jobs at once.
+* Massive Storage: Store huge amounts of data for (relatively) cheap.
+* Repeatability: You can share your exact code, environment, software versioning, etc, 
+and others can repeat your analysis and get the exact same result 
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# DNA Nexus {#dnanexusIntro}
+
+DNA Nexus is a cloud based system designed to make cloud computing more accessable to bioinformaticians, biostatisticians, 
+and computational biologists.
+
+```{r, echo = FALSE, fig.cap = '', out.height="300pt"}
+knitr::include_graphics("img/dnaNexus.frontpage.PNG")
+```
+
+We are using DNA nexus as to gauge interest in cloud computing and cloud storage. 
+
+Eventually (hopefully) many of us will move over to the google cloud platform (GCP) or azure (which are substantially cheaper). 
+
+But we don't currently have the ability to create accounts on GCP/azure and hook them up to payment.
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# Getting Started {#getStarted}
+
+Go to dnanexus.com, create an account and create a new project.
+
+To get preliminary access to funds, add me to your project as an admin and send me an email at: stephen.hartley@nih.mail.gov
+
+We have a small shared org account with a few hundred dollars in it. 
+
+We won't get more until we start seeing it get used up.
+
+## Getting Started {#getStarted1}
+
+Create a new account:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/dx.login.png")
+```
+
+## Getting Started {#getStarted2}
+
+Create a new project:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/dx.newProject.PNG")
+```
+
+## Getting Started {#getStarted3}
+
+Create a new project:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/dx.newProjectDiag.PNG")
+```
+
+## Getting Started {#getStarted4}
+
+Add me to the project:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/dx.shareProject.PNG")
+```
+
+## Getting Started {#getStarted5}
+
+Add me to the project (username hartleys):
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/dx.shareProjectWithMe.png")
+```
+
+## Getting Started {#getStarted6}
+
+And then just send me an email (again: stephen.hartley@nih.mail.gov)! 
+
+I'll hook it up to the shared org account so you can start running stuff.
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# Command Line vs GUI {#CMDvsGUI}
+
+There are two ways to interact with DnaNexus: through the command line tool (dx), and through the webpage.
+
+The command line tool is more flexible and can do some things that the 
+web interface cannot, but the vast majority of tasks that users will likely encounter can be carried out using 
+either interface.
+
+## The Web Interface {#dxweb0}
+
+The main project page will show you the file directory tree for your project.
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/web.0.png")
+```
+
+## The Web Interface {#dxweb1}
+
+You can upload data to the cloud for free.
+
+But of course once your data is uploaded, you WILL start paying for storage.
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/web.2.PNG")
+```
+
+## The Web Interface {#dxweb2}
+
+Similarly, files can be downloaded from DNA Nexus, although for large files you will incur fees.
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/web.5.PNG")
+```
+
+## The Web Interface {#dxweb4}
+
+Files can be uploaded using simple drag and drop. 
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/web.3.PNG")
+```
+
+# The Command Line tool: dx {#dx0}
+
+The DnaNexus command line tool is loaded as a module on Biowulf. It's not allowed on the head node, so generally the
+easiest way to use it is via an interactive session.
+
+    [hartleys@biowulf ~]$ sinteractive
+    [hartleys@cn3145 ~]$ module load DNAnexus
+
+The first thing you will need to do is login to Dna Nexus. This exchanges a key pair, so you won't have to type in a password 
+every time you use dx. Once you type in your password you will be asked to select a project.
+
+    [hartleys@cn3145 ~]$ dx login
+    Acquiring credentials from https://auth.dnanexus.com
+    Username [hartleys]: hartleys
+    Password:
+    ...
+    Available projects (CONTRIBUTE or higher):
+    0) Steve@NCI (ADMINISTER)
+    1) steveTestProject (ADMINISTER)
+    2) AzureWest_Project (ADMINISTER)
+    
+    Pick a numbered choice [0]: 0
+    Setting current project to: Steve@NCI
+
+## Using the Command Line Tool {#dx1}
+
+Once you're logged into a project, you can explore the project in much the same way you explore a normal filesystem in linux, just adding "dx" to the start of every command.
+
+For example, you can ls the files in the root directory:
 ```{bash}
 dx ls
-dx cd test
-dx cd ..
+```
 
+## Using the Command Line Tool {#dx1a}
+Change to a different directory:
+```{bash}
+dx cd test
+dx ls
+dx cd ..
+```
+
+## Using the Command Line Tool {#dx1b}
+And create and delete new directories or files.
+```{bash}
 dx mkdir test2
 dx rmdir test2
 ```
 
-For a full list of available commands:
+## Using the Command Line Tool {#dx2}
+
+You can also upload and download data using the command line tool:
+
+    dx upload ../examples/indata/linux.words.txt --destination /test/linux.words.txt
+
+and
+
+    dx download /test/linux.words.txt --destination downloaded.linux.words.txt
+
+## Using the Command Line Tool {#dx3}
+
+The dx tool has some pretty good help docs. You can access help for a command using the dx help command. 
+
+For example, to access help for dx upload, use the command:
+
+```{bash}
+dx help upload
+```
+
+For a full list of available dx commands:
 
 ```{bash}
 dx help all
 ```
 
-# The DNANexus Web Interface:  {#web}
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
 
-```{r, echo = FALSE, fig.cap = 'A figure caption.'}
-knitr::include_graphics("img/dnaNexus.frontpage.PNG")
+# DNA Nexus Apps {#dnanexusNotes}
+
+DNA nexus allows users and developers to create "apps" which can be shared and used to run analysis/data processing pipelines.
+
+Many common tasks already have apps developed by the DNA Nexus team:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/chooseToolMenu.png")
 ```
 
-# A Simple Example:  {#example}
+## Running Apps {#dnaNexusAppsGATK1}
+
+Apps can be run via the web interface:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/gatk.1.selectFile.PNG")
+```
+
+## Running Apps {#dnaNexusAppsGATK2}
+
+Apps can be run via the web interface:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/gatk.2.selectfile.PNG")
+```
+
+## Running Apps {#dnaNexusAppsGATK3}
+
+Apps can be run via the web interface:
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/gatk.3.run.PNG")
+```
+
+## Running Apps {#dnaNexusAppsGATK4}
+
+Or, if you prefer, you can run via the dx command line:
+
+    dx run app-gatk4_genotypegvcfs_single_sample_parallel \
+        -i --variant_gvcf     /testdata/mySingleSampleGVCF.g.vcf.gz \
+        -i --genome_fastagz   /testdata/myGenomeFasta.fasta.gz \
+        --destination         /my/output/dir 
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# DNA Nexus Workstations and Scripts {#dnanexusCmdLine0}
+
+Alternatively, instead of running an app you can also run command line tools on the DNA nexus platform.
+
+If you have something running on biowulf, we can probably get it running on DNA nexus.
+
+## DNA Nexus Workstations and Scripts {#dnanexusCmdLine1}
+
+You can launch an interactive workstation 
+using my toolkit/workstation app:
+
+    dx run app-r_binfo_toolkit --ssh \
+        -i max_session_length=12h
+
+This app just gives you access to an Ubuntu 16.04 machine with a whole bunch of bioinformatics software preinstalled.
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/dx.workstation.1.png")
+```
+
+## R Bioinformatics Toolkit {#rbinfotk}
+
+The R bioinformatics Toolkit app comes with a slew of useful packages preinstalled:
+
+* bcftools (v1.9)
+* bedtools (v2.29.0)
+* bgzip (v1.9)
+* plink (v1.90b6)
+* sambamba (v0.7.0)
+* samtools (v1.9)
+* seqtk (v1.3 r106)
+* tabix (v1.9)
+* vcflib binaries (git revision 8bc93d8a74735b0fe6303f78b2764d6987ba1cde)
+* GATK 4.0.2.1
+* FreeBayes
+* vArmyKnife
+* picard tools
+* R 3.6.1
+* Every R package I've ever used + a bunch I've only heard about
+
+## R Bioinformatics Toolkit {#rbinfotkr}
+
+The full list of R packages that I've installed:
+ 
+    acepack              affy            affyio           annotate          AnnotationDbi    AnnotationFilter
+    apeglm               askpass         assertthat       backports         base             base64enc
+    bbmle                beeswarm        BH               Biobase           BiocFileCache    BiocGenerics
+    BiocManager          BiocParallel    BiocVersion      biomaRt           Biostrings       bit
+    bit64                bitops          blob             boot              broom            callr
+    cellranger           checkmate       circlize         class             cli              clipr
+    clue                 cluster         clusterProfiler  coda              codetools        colorspace
+    compiler             ComplexHeatmap  cowplot          crayon            curl             data.table
+    datasets             DBI             dbplyr           DelayedArray      DESeq2           digest
+    DO.db                DOSE            dplyr            edgeR             ellipsis         emdbook
+    enrichplot           ensembldb       europepmc        evaluate          fansi            farver
+    fastmap              fastmatch       fgsea            forcats           foreign          formatR
+    Formula              fs              futile.logger    futile.options    genefilter       geneplotter
+    generics             GenomeInfoDb    GenomeInfoDbData GenomicAlignments GenomicFeatures  GenomicRanges
+    GEOquery             GetoptLong      ggforce          ggplot2           ggplotify        ggraph
+    ggrepel              ggridges        GlobalOptions    glue              GO.db            GOSemSim
+    graph                graphics        graphlayouts     grDevices         grid             gridExtra
+    gridGraphics         gtable          haven            hexbin            highr            Hmisc
+    hms                  htmlTable       htmltools        htmlwidgets       httpuv           httr
+    hwriter              igraph          impute           IRanges           JctSeqData       jsonlite
+    JunctionSeq          KernSmooth      knitr            labeling          lambda.r         later
+    lattice              latticeExtra    lazyeval         lifecycle         limma            locfit
+    lubridate            magrittr        markdown         MASS              Matrix           matrixStats
+    memoise              methods         mgcv             mime              modelr           multtest
+    munsell              nlme            nnet             numDeriv          openssl          parallel
+    pasilla              pheatmap        pillar           pkgconfig         plogr            plotrix
+    plyr                 png             polyclip         preprocessCore    prettyunits      processx
+    progress             promises        ProtGenerics     ps                purrr            QoRTs
+    QoRTsExampleData     qvalue          R6               rappdirs          RColorBrewer     Rcpp
+    RcppArmadillo        RcppEigen       RcppNumerical    RCurl             readr            readxl
+    rematch              reprex          reshape2         Rgraphviz         Rhtslib          rjson
+    rlang                rmarkdown       rpart            Rsamtools         RSQLite          rstudioapi
+    rtracklayer          rvcheck         rvest            S4Vectors         scales           selectr
+    shape                shiny           ShortRead        snow              sourcetools      spatial
+    splines              statmod         stats            stats4            stringi          stringr
+    SummarizedExperiment survival        sys              tcltk             tibble           tidygraph
+    tidyr                tidyselect      tidyverse        tinytex           tools            triebeard
+    tweenr               tximport        UpSetR           urltools          utf8             utils
+    vctrs                viridis         viridisLite      vsn               whisker          withr
+    xfun                 XML             xml2             xtable            XVector          yaml
+    zeallot              zlibbioc        zoo
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+# App Monitoring {#appMon1}
+
+Once you've submitted a job, you can monitor its progress and status using the Monitor tab on the Project screen.
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/appMonitor.1.png")
+```
+
+## App Monitoring {#appMon2}
+
+Here you'll see a list of jobs and their status, cost, timestamps, etc.
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/appMonitor.2.png")
+```
+
+## App Monitoring {#appMon3}
+
+By clicking on an individual job you can see more detailed info, and can view the STDOUT/STDERR log.
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/appMonitor.3.png")
+```
+
+## App Monitoring {#appMon4}
+
+```{r, echo = FALSE, fig.cap = '', out.height="600pt"}
+knitr::include_graphics("img/appMonitor.4.png")
+```
+
+# Questions?  {#questions}
+
+
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- #############################################################################
+
+# Advanced: Creating a New App  {#creatingNewApp}
 
 We are going to do a very simple example in which we upload some data, run a program on it, and then download the result.
 
 Say we want to extract all the dictionary words that begin with "ni".
 
-# The App Builder Wizard: {#wiz}
+## The App Builder Wizard: {#wiz}
 
 The first step is to create a new App. You can generate the files from a template, write them yourself, or 
 you can use the dx app creation wizard. For your first project, I recommend the last option.
@@ -272,7 +694,7 @@ directory contains a copy of the output:
 cp -R ../examples/findNi_original ./ex/findNi
 ```
 
-# Modifying the App: {#modTheApp}
+## Modifying the App: {#modTheApp}
 
 The app produced by the wizard is very minimal, it doesn't actually DO anything.
 
@@ -319,7 +741,7 @@ cp ../examples/files/findNi.v2.bash ./ex/findNi/src/findNi.sh
 cat ./ex/findNi/src/findNi.sh
 ```
 
-# Building the App: {#buildApp}
+## Building the App: {#buildApp}
 
 Now we have to "build" the app, which packages up the app and uploads it to your current project
 
@@ -328,7 +750,7 @@ cd ./ex/
 dx build -f findNi
 ```
 
-# Uploading Input Files {#uploadInput}
+## Uploading Input Files {#uploadInput}
 
 Before we can run our new app, first we need to upload an input file. For this we 
 use the upload command:
@@ -337,14 +759,14 @@ use the upload command:
 dx upload ../examples/indata/linux.words.txt --brief --path /test/linux.words.txt
 ```
 
-# Running the software {#run}
+## Running the software {#run}
 
 Before we can run our new app, first we need to upload an input file. For this we 
 use the upload command:
 
     dx run findNi -i wordsFile=/test/linux.words.txt --destination /test/
 
-# Downloading results {#dlres}
+## Downloading results {#dlres}
 
 We can now download the results using the dx download command:
 
@@ -354,7 +776,21 @@ dx download /test/words.that.begin.with.ni.txt
 cat words.that.begin.with.ni.txt | head -n50
 ```
 
-# Other useful commands: {#misccmd}
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
+## More useful commands: {#miscmisccmd2}
+
+There are a number of simple commands that dx offers.
+
+See what projects you have access to:
+```
+dx find projects
+
+#Select the project you want from the above list:
+dx select project-FbvPXyQ0pgP1PQbkJG1vfQpz
+```
 
 You can use cat to quickly preview files:
 
@@ -367,7 +803,10 @@ set -x
 dx describe /test/words.that.begin.with.ni.txt
 ```
 
+And you can use dx watch to examine a job in progress...
+
     dx watch <jobid>
+
 
 <!-- ################################################################################################################ --> 
 <!-- ################################################################################################################ --> 

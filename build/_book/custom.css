@@ -1,0 +1,5 @@
+.book .book-body .page-wrapper .page-inner{max-width:1900px;margin:0 auto;padding:20px 0 40px}
+.book .book-body .page-wrapper .page-inner section.normal h1, .book .book-body .page-wrapper .page-inner section.normal h2, .book .book-body .page-wrapper .page-inner section.normal h3, .book .book-body .page-wrapper .page-inner section.normal h4, .book .book-body .page-wrapper .page-inner section.normal h5, .book .book-body .page-wrapper .page-inner section.normal h6 {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}

@@ -1,0 +1,6 @@
+---
+output:
+    bookdown::gitbook:
+       includes:
+          after_body: resizeScript.html
+---

@@ -1,0 +1,7 @@
+export VERSION=""
+export FULLDATE="Mon Dec  9 11:57:16 EST 2019"
+export FULLDATESEC="1575910636"
+export DATE="2019-12-09"
+export DATETEXT="December 09, 2019"
+export COMMITCT=0
+export FULLVERSION=

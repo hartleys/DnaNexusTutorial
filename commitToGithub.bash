@@ -16,7 +16,7 @@ source ./commitInfo.rc
 
 mv commitInfo.rc commitLogs/commitInfo.${VERSION}.rc
 
-if [ "$NEWVERSION" == "." ]; then
+if [ "$NEWVERSION" == "." -o "$NEWVERSION" == "" ]; then
   echo "Autodetecting version";
   MAJORMINOR=$( echo ${VERSION} | tr '.' $'\t' | cut -f1-2 | tr $'\t' '.')
   LEASTVER=$(( $( echo ${VERSION} | tr '.' $'\t' | cut -f3 ) + 1 ))

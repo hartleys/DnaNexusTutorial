@@ -2,3 +2,84 @@
 ###################
 
 git add:
+
+
+git status:
+    # On branch master
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #	modified:   build/_book/_main.pdf
+    #	modified:   build/_book/buildApp.html
+    #	modified:   build/_book/dlres.html
+    #	modified:   build/_book/example.html
+    #	new file:   build/_book/img/dnaNexus.frontpage.PNG
+    #	modified:   build/_book/legal.html
+    #	modified:   build/_book/misccmd.html
+    #	modified:   build/_book/modTheApp.html
+    #	modified:   build/_book/references.html
+    #	modified:   build/_book/run.html
+    #	modified:   build/_book/search_index.json
+    #	modified:   build/_book/setup.html
+    #	modified:   build/_book/uploadInput.html
+    #	new file:   build/_book/web.html
+    #	modified:   build/_book/wiz.html
+    #	new file:   build/_main.Rmd
+    #	modified:   build/buildScripts/build.bash
+    #	modified:   build/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	new file:   build/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+    #	new file:   build/img/currProjectPage.PNG
+    #	new file:   build/img/dnaNexus.frontpage.PNG
+    #	new file:   build/img/dnaNexus.login.PNG
+    #	new file:   build/img/projectsPage.PNG
+    #	modified:   commitInfo.rc
+    #	modified:   commitLogs/0.0.2.log
+    #	modified:   commitLogs/0.0.3.log
+    #	new file:   commitLogs/0.0.4.log
+    #	new file:   commitLogs/commitInfo.0.0.3.rc
+    #	modified:   commitToGithub.bash
+    #	modified:   docs/DnaNexusTutorial.pdf
+    #	modified:   docs/buildApp.html
+    #	modified:   docs/dlres.html
+    #	modified:   docs/example.html
+    #	new file:   docs/img/dnaNexus.frontpage.PNG
+    #	modified:   docs/legal.html
+    #	modified:   docs/misccmd.html
+    #	modified:   docs/modTheApp.html
+    #	modified:   docs/references.html
+    #	modified:   docs/run.html
+    #	modified:   docs/search_index.json
+    #	modified:   docs/setup.html
+    #	modified:   docs/uploadInput.html
+    #	new file:   docs/web.html
+    #	modified:   docs/wiz.html
+    #
+    # Changes not staged for commit:
+    #   (use "git add/rm <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #	deleted:    build/_book/styles.css
+    #	deleted:    build/_book/styles.js
+    #	modified:   commitLogs/0.0.4.log
+    #	deleted:    docs/_main.pdf
+    #
+
+
+git commit:
+    [master 4828e23] 0.0.4
+     44 files changed, 2053 insertions(+), 402 deletions(-)
+     create mode 100644 build/_book/img/dnaNexus.frontpage.PNG
+     create mode 100644 build/_book/web.html
+     create mode 100644 build/_main.Rmd
+     create mode 100644 build/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+     create mode 100644 build/img/currProjectPage.PNG
+     create mode 100644 build/img/dnaNexus.frontpage.PNG
+     create mode 100644 build/img/dnaNexus.login.PNG
+     create mode 100644 build/img/projectsPage.PNG
+     create mode 100644 commitLogs/0.0.4.log
+     create mode 100644 commitLogs/commitInfo.0.0.3.rc
+     create mode 100644 docs/img/dnaNexus.frontpage.PNG
+     create mode 100644 docs/web.html
+
+
+git push:

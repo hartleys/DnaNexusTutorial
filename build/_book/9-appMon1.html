@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 App Monitoring | Introduction to DNA Nexus and Cloud Computing for Bioinformatics</title>
+  <meta name="description" content="A tutorial in the use of the DNA nexus command line interface (CLI)." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 App Monitoring | Introduction to DNA Nexus and Cloud Computing for Bioinformatics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A tutorial in the use of the DNA nexus command line interface (CLI)." />
+  <meta name="github-repo" content="hartleys/vArmyKnife" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 App Monitoring | Introduction to DNA Nexus and Cloud Computing for Bioinformatics" />
+  
+  <meta name="twitter:description" content="A tutorial in the use of the DNA nexus command line interface (CLI)." />
+  
+
+<meta name="author" content="Stephen Hartley, PhD" />
+
+
+<meta name="date" content="2019-12-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="8-3-rbinfotkr.html">
+<link rel="next" href="9-1-appMon2.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="1-MAINTITLE.html"><a href="1-MAINTITLE.html"><i class="fa fa-check"></i><b>1</b> Introduction to DNA Nexus and Cloud Computing for Bioinformatics</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-1-hi.html"><a href="1-1-hi.html"><i class="fa fa-check"></i><b>1.1</b> Hi!</a></li>
+<li class="chapter" data-level="1.2" data-path="1-2-prepreintro2.html"><a href="1-2-prepreintro2.html"><i class="fa fa-check"></i><b>1.2</b> Target Audience:</a></li>
+<li class="chapter" data-level="1.3" data-path="1-3-targetAudience.html"><a href="1-3-targetAudience.html"><i class="fa fa-check"></i><b>1.3</b> Audience Experience Level:</a></li>
+<li class="chapter" data-level="1.4" data-path="1-4-targetAudienceNeeds.html"><a href="1-4-targetAudienceNeeds.html"><i class="fa fa-check"></i><b>1.4</b> Audience Needs:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-whycloud.html"><a href="2-whycloud.html"><i class="fa fa-check"></i><b>2</b> Why use the cloud?</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-1-whycloud2.html"><a href="2-1-whycloud2.html"><i class="fa fa-check"></i><b>2.1</b> Why use the cloud?</a></li>
+<li class="chapter" data-level="2.2" data-path="2-2-whycloud3.html"><a href="2-2-whycloud3.html"><i class="fa fa-check"></i><b>2.2</b> Why use the cloud?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-dnanexusIntro.html"><a href="3-dnanexusIntro.html"><i class="fa fa-check"></i><b>3</b> DNA Nexus</a></li>
+<li class="chapter" data-level="4" data-path="4-getStarted.html"><a href="4-getStarted.html"><i class="fa fa-check"></i><b>4</b> Getting Started</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-getStarted1.html"><a href="4-1-getStarted1.html"><i class="fa fa-check"></i><b>4.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.2" data-path="4-2-getStarted2.html"><a href="4-2-getStarted2.html"><i class="fa fa-check"></i><b>4.2</b> Getting Started</a></li>
+<li class="chapter" data-level="4.3" data-path="4-3-getStarted3.html"><a href="4-3-getStarted3.html"><i class="fa fa-check"></i><b>4.3</b> Getting Started</a></li>
+<li class="chapter" data-level="4.4" data-path="4-4-getStarted4.html"><a href="4-4-getStarted4.html"><i class="fa fa-check"></i><b>4.4</b> Getting Started</a></li>
+<li class="chapter" data-level="4.5" data-path="4-5-getStarted5.html"><a href="4-5-getStarted5.html"><i class="fa fa-check"></i><b>4.5</b> Getting Started</a></li>
+<li class="chapter" data-level="4.6" data-path="4-6-getStarted6.html"><a href="4-6-getStarted6.html"><i class="fa fa-check"></i><b>4.6</b> Getting Started</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-CMDvsGUI.html"><a href="5-CMDvsGUI.html"><i class="fa fa-check"></i><b>5</b> Command Line vs GUI</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-1-dxweb0.html"><a href="5-1-dxweb0.html"><i class="fa fa-check"></i><b>5.1</b> The Web Interface</a></li>
+<li class="chapter" data-level="5.2" data-path="5-2-dxweb1.html"><a href="5-2-dxweb1.html"><i class="fa fa-check"></i><b>5.2</b> The Web Interface</a></li>
+<li class="chapter" data-level="5.3" data-path="5-3-dxweb2.html"><a href="5-3-dxweb2.html"><i class="fa fa-check"></i><b>5.3</b> The Web Interface</a></li>
+<li class="chapter" data-level="5.4" data-path="5-4-dxweb4.html"><a href="5-4-dxweb4.html"><i class="fa fa-check"></i><b>5.4</b> The Web Interface</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-dx0.html"><a href="6-dx0.html"><i class="fa fa-check"></i><b>6</b> The Command Line tool: dx</a><ul>
+<li class="chapter" data-level="6.1" data-path="6-1-dx1.html"><a href="6-1-dx1.html"><i class="fa fa-check"></i><b>6.1</b> Using the Command Line Tool</a></li>
+<li class="chapter" data-level="6.2" data-path="6-2-dx1a.html"><a href="6-2-dx1a.html"><i class="fa fa-check"></i><b>6.2</b> Using the Command Line Tool</a></li>
+<li class="chapter" data-level="6.3" data-path="6-3-dx1b.html"><a href="6-3-dx1b.html"><i class="fa fa-check"></i><b>6.3</b> Using the Command Line Tool</a></li>
+<li class="chapter" data-level="6.4" data-path="6-4-dx2.html"><a href="6-4-dx2.html"><i class="fa fa-check"></i><b>6.4</b> Using the Command Line Tool</a></li>
+<li class="chapter" data-level="6.5" data-path="6-5-dx3.html"><a href="6-5-dx3.html"><i class="fa fa-check"></i><b>6.5</b> Using the Command Line Tool</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-dnanexusNotes.html"><a href="7-dnanexusNotes.html"><i class="fa fa-check"></i><b>7</b> DNA Nexus Apps</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-1-dnaNexusAppsGATK1.html"><a href="7-1-dnaNexusAppsGATK1.html"><i class="fa fa-check"></i><b>7.1</b> Running Apps</a></li>
+<li class="chapter" data-level="7.2" data-path="7-2-dnaNexusAppsGATK2.html"><a href="7-2-dnaNexusAppsGATK2.html"><i class="fa fa-check"></i><b>7.2</b> Running Apps</a></li>
+<li class="chapter" data-level="7.3" data-path="7-3-dnaNexusAppsGATK3.html"><a href="7-3-dnaNexusAppsGATK3.html"><i class="fa fa-check"></i><b>7.3</b> Running Apps</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-dnaNexusAppsGATK4.html"><a href="7-4-dnaNexusAppsGATK4.html"><i class="fa fa-check"></i><b>7.4</b> Running Apps</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-dnanexusCmdLine0.html"><a href="8-dnanexusCmdLine0.html"><i class="fa fa-check"></i><b>8</b> DNA Nexus Workstations and Scripts</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-dnanexusCmdLine1.html"><a href="8-1-dnanexusCmdLine1.html"><i class="fa fa-check"></i><b>8.1</b> DNA Nexus Workstations and Scripts</a></li>
+<li class="chapter" data-level="8.2" data-path="8-2-rbinfotk.html"><a href="8-2-rbinfotk.html"><i class="fa fa-check"></i><b>8.2</b> R Bioinformatics Toolkit</a></li>
+<li class="chapter" data-level="8.3" data-path="8-3-rbinfotkr.html"><a href="8-3-rbinfotkr.html"><i class="fa fa-check"></i><b>8.3</b> R Bioinformatics Toolkit</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-appMon1.html"><a href="9-appMon1.html"><i class="fa fa-check"></i><b>9</b> App Monitoring</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-1-appMon2.html"><a href="9-1-appMon2.html"><i class="fa fa-check"></i><b>9.1</b> App Monitoring</a></li>
+<li class="chapter" data-level="9.2" data-path="9-2-appMon3.html"><a href="9-2-appMon3.html"><i class="fa fa-check"></i><b>9.2</b> App Monitoring</a></li>
+<li class="chapter" data-level="9.3" data-path="9-3-appMon4.html"><a href="9-3-appMon4.html"><i class="fa fa-check"></i><b>9.3</b> App Monitoring</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-questions.html"><a href="10-questions.html"><i class="fa fa-check"></i><b>10</b> Questions?</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-1-miscmisccmd2.html"><a href="10-1-miscmisccmd2.html"><i class="fa fa-check"></i><b>10.1</b> More useful commands:</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-legal.html"><a href="11-legal.html"><i class="fa fa-check"></i><b>11</b> Legal</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to DNA Nexus and Cloud Computing for Bioinformatics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appMon1" class="section level1">
+<h1><span class="header-section-number">9</span> App Monitoring</h1>
+<p>Once you’ve submitted a job, you can monitor its progress and status using the Monitor tab on the Project screen.</p>
+<p><img src="img/appMonitor.1.png" height="600pt" /></p> 
+</div>
+
+
+<script src="resizeToFit.js"></script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="8-3-rbinfotkr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="9-1-appMon2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 3
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

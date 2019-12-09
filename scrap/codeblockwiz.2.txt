@@ -1,0 +1,169 @@
+    
+    dx-app-wizard
+    DNAnexus App Wizard, API v1.0.0
+    
+    Basic Metadata
+    
+    Please enter basic metadata fields that will be used to describe your app.
+    Optional fields are denoted by options with square brackets.  At the end of
+    this wizard, the files necessary for building your app will be generated
+    from the answers you provide.
+    
+    The name of your app must be unique on the DNAnexus platform.
+    After creating your app for the first time, you will be able to publish new
+    versions using the same app name.  App names are restricted to alphanumeric
+    characters (a-z, A-Z, 0-9), and the characters ".", "_", and "-".
+    App Name: findNi
+    The directory findNi already exists.  Would you like to remove all of its con                                                                                                 tents and create a new directory in its place? [y/n]: y
+    Replacing all contents of directory findNi...
+    
+    The title, if provided, is what is shown as the name of your app on
+    the website.  It can be any valid UTF-8 string.
+    Title []: Find Ni
+    
+    The summary of your app is a short phrase or one-line description
+    of what your app does.  It can be any UTF-8 human-readable string.
+    Summary []: Finds words that begin with ni
+    
+    You can publish multiple versions of your app, and the version of
+    your app is a string with which to tag a particular version.  We encourage
+    the use of Semantic Versioning for labeling your apps (see
+    http://semver.org/ for more details).
+    Version [0.0.1]: 0.0.1
+    
+    Input Specification
+    
+    You will now be prompted for each input parameter to your app.  Each
+    parameter should have a unique name that uses only the underscore "_" and
+    alphanumeric characters, and does not start with a number.
+    
+    1st input name (<ENTER> to finish): wordsFile
+    Label (optional human-readable name) []: File of all words
+    Your input parameter must be of one of the following classes:
+    applet         array:file     array:record   file           int
+    array:applet   array:float    array:string   float          record
+    array:boolean  array:int      boolean        hash           string
+    
+    Choose a class (<TAB> twice for choices): file
+    This is an optional parameter [y/n]: n
+    
+    2nd input name (<ENTER> to finish):
+    
+    Output Specification
+    
+    You will now be prompted for each output parameter of your app.  Each
+    parameter should have a unique name that uses only the underscore "_" and
+    alphanumeric characters, and does not start with a number.
+    
+    1st output name (<ENTER> to finish): outfile
+    Label (optional human-readable name) []: Output file of words
+    Choose a class (<TAB> twice for choices): file
+    
+    2nd output name (<ENTER> to finish):
+    
+    Timeout Policy
+    
+    Set a timeout policy for your app. Any single entry point of the
+    app that runs longer than the specified timeout will fail with a
+    TimeoutExceeded error. Enter an int greater than 0 with a single-letter
+    suffix (m=minutes, h=hours, d=days) (e.g. "48h").
+    Timeout policy [48h]: 48h
+    
+    Template Options
+    
+    You can write your app in any programming language, but we provide
+    templates for the following supported languages: Python, bash
+    Programming language: bash
+    
+    Access Permissions
+    If you request these extra permissions for your app, users will see this
+    fact when launching your app, and certain other restrictions will apply.
+    For more information, see
+    https://wiki.dnanexus.com/App-Permissions.
+    
+    Access to the Internet (other than accessing the DNAnexus API).
+    Will this app need access to the Internet? [y/N]: N
+    
+    Direct access to the parent project. This is not needed if your app
+    specifies outputs,     which will be copied into the project after it's
+    done running.
+    Will this app need access to the parent project? [y/N]: N
+    
+    System Requirements
+    
+    Common AWS instance types:
+    +--------------------------------------------+
+    |Name         |Memory_GB|Storage_GB|CPU_Cores|
+    +-------------+---------+----------+---------|
+    |mem1_ssd1_x2 |3.8      |32        |2        |
+    |mem1_ssd1_x4 |7.5      |80        |4        |
+    |mem1_ssd1_x8 |15.0     |160       |8        |
+    |mem1_ssd1_x16|30.0     |320       |16       |
+    |mem1_ssd1_x32|60.0     |640       |32       |
+    |mem2_ssd1_x2 |7.5      |32        |2        |
+    |mem2_ssd1_x4 |15.0     |80        |4        |
+    |mem2_ssd1_x8 |30.0     |160       |8        |
+    |mem3_ssd1_x2 |15.0     |32        |2        |
+    |mem3_ssd1_x4 |30.5     |80        |4        |
+    |mem3_ssd1_x8 |61.0     |160       |8        |
+    |mem3_ssd1_x16|122.0    |320       |16       |
+    |mem3_ssd1_x32|244.0    |640       |32       |
+    |mem1_ssd2_x2 |3.8      |160       |2        |
+    |mem1_ssd2_x4 |7.5      |320       |4        |
+    |mem1_ssd2_x8 |15       |640       |8        |
+    |mem1_ssd2_x16|30       |1280      |16       |
+    |mem1_ssd2_x36|60       |2880      |36       |
+    +--------------------------------------------+
+    Common Azure instance types:
+    +--------------------------------------------------+
+    |Name               |Memory_GB|Storage_GB|CPU_Cores|
+    +-------------------+---------+----------+---------|
+    |azure:mem1_ssd1_x2 |3.9      |32        |2        |
+    |azure:mem1_ssd1_x4 |7.8      |64        |4        |
+    |azure:mem1_ssd1_x8 |15.7     |128       |8        |
+    |azure:mem1_ssd1_x16|31.4     |256       |16       |
+    |azure:mem2_ssd1_x1 |3.5      |128       |1        |
+    |azure:mem2_ssd1_x2 |7.0      |128       |2        |
+    |azure:mem2_ssd1_x4 |14.0     |128       |4        |
+    |azure:mem2_ssd1_x8 |28.0     |256       |8        |
+    |azure:mem2_ssd1_x16|56.0     |512       |16       |
+    |azure:mem3_ssd1_x2 |14.0     |128       |2        |
+    |azure:mem3_ssd1_x4 |28.0     |128       |4        |
+    |azure:mem3_ssd1_x8 |56.0     |256       |8        |
+    |azure:mem3_ssd1_x16|112.0    |512       |16       |
+    |azure:mem3_ssd1_x20|140.0    |640       |20       |
+    |azure:mem4_ssd1_x2 |28.0     |128       |2        |
+    |azure:mem4_ssd1_x4 |56.0     |128       |4        |
+    |azure:mem4_ssd1_x8 |112.0    |256       |8        |
+    |azure:mem4_ssd1_x16|224      |512       |16       |
+    |azure:mem4_ssd1_x32|448      |1024      |32       |
+    +--------------------------------------------------+
+    Default instance type: The instance type you select here will apply
+    to all entry points in your app unless you override it. See
+    https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types
+    for more information.
+    Choose an instance type for your app [mem1_ssd1_x4]: mem1_ssd_x4
+    
+    *** Generating DNAnexus App Template... ***
+    
+    Your app specification has been written to the dxapp.json file. You can
+    specify more app options by editing this file directly (see
+    https://wiki.dnanexus.com/Developer-Portal for complete documentation).
+    
+    Created files:
+             findNi/Readme.developer.md
+             findNi/Readme.md
+             findNi/dxapp.json
+             findNi/resources/
+             findNi/src/
+             findNi/src/findNi.sh
+             findNi/test/
+    
+    App directory created!  See https://wiki.dnanexus.com/Developer-Portal for
+    tutorials on how to modify these files, or run "dx build findNi" or "dx
+    build --create-app findNi" while logged in with dx.
+    
+    Running the DNAnexus build utility will create an executable on the
+    DNAnexus platform.  Any files found in the resources directory will
+    be uploaded so that they will be present in the root directory when the
+    executable is run.
