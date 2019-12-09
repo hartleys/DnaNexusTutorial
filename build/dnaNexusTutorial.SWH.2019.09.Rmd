@@ -114,6 +114,44 @@ and others can repeat your analysis and get the exact same result
 <!-- ################################################################################################################ --> 
 <!-- ################################################################################################################ --> 
 
+# Which Cloud to Use? {#whichCloud}
+
+There are several different cloud platforms: 
+
+* Microsoft Azure
+* Amazon Web Services (AWS)
+* Google Cloud Platform (GCP)
+
+And a few platforms that are build on top of other platforms:
+* Fire Cloud (based on GCP)
+* DNA Nexus (mix of AWS/Azure)
+
+## Which Cloud to Use? {#whichCloud1}
+
+We're mainly exploring GCP and DnaNexus.
+
+Google Cloud Platform (GCP)
+* Cheaper
+* More Flexible
+* More complicated to use
+* We are having technical difficulties with account creation/admin
+
+DNA Nexus:
+* More Expensive
+* User-Friendly
+* Easy app/workflow sharing
+* We can create an account and have you running pipelines **today**
+
+## Which Cloud to Use? {#whichCloud2}
+
+Eventually, we're going to want to migrate most of our work to GCP (if possible).
+
+But if you want to try working in the cloud, DnaNexus is available now.
+
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+<!-- ################################################################################################################ --> 
+
 # DNA Nexus {#dnanexusIntro}
 
 DNA Nexus is a cloud based system designed to make cloud computing more accessable to bioinformaticians, biostatisticians, 
