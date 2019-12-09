@@ -146,6 +146,8 @@ DNA Nexus:
 
 Eventually, we're going to want to migrate most of our work to GCP (if possible).
 
+But we don't currently have the ability to create accounts on GCP/azure and hook them up to payment.
+
 But if you want to try working in the cloud, DnaNexus is available now.
 
 <!-- ################################################################################################################ --> 
@@ -158,14 +160,10 @@ DNA Nexus is a cloud based system designed to make cloud computing more accessab
 and computational biologists.
 
 ```{r, echo = FALSE, fig.cap = '', out.height="300pt"}
-knitr::include_graphics("img/dnaNexus.frontpage.PNG")
+knitr::include_graphics("img/pricing.png")
 ```
 
 We are using DNA nexus as to gauge interest in cloud computing and cloud storage. 
-
-Eventually (hopefully) many of us will move over to the google cloud platform (GCP) or azure (which are substantially cheaper). 
-
-But we don't currently have the ability to create accounts on GCP/azure and hook them up to payment.
 
 <!-- ################################################################################################################ --> 
 <!-- ################################################################################################################ --> 

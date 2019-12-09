@@ -2,3 +2,262 @@
 ###################
 
 git add:
+
+
+git status:
+    # On branch master
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #	modified:   build/_book/1-1-hi.html
+    #	modified:   build/_book/1-2-prepreintro2.html
+    #	modified:   build/_book/1-3-targetAudience.html
+    #	modified:   build/_book/1-4-targetAudienceNeeds.html
+    #	modified:   build/_book/1-MAINTITLE.html
+    #	new file:   build/_book/10-1-appMon2.html
+    #	new file:   build/_book/10-2-appMon3.html
+    #	new file:   build/_book/10-3-appMon4.html
+    #	new file:   build/_book/10-appMon1.html
+    #	new file:   build/_book/11-1-miscmisccmd2.html
+    #	new file:   build/_book/11-questions.html
+    #	new file:   build/_book/12-legal.html
+    #	modified:   build/_book/2-1-whycloud2.html
+    #	modified:   build/_book/2-2-whycloud3.html
+    #	modified:   build/_book/2-whycloud.html
+    #	new file:   build/_book/3-1-whichCloud1.html
+    #	new file:   build/_book/3-2-whichCloud2.html
+    #	new file:   build/_book/3-whichCloud.html
+    #	new file:   build/_book/4-dnanexusIntro.html
+    #	new file:   build/_book/5-1-getStarted1.html
+    #	new file:   build/_book/5-2-getStarted2.html
+    #	new file:   build/_book/5-3-getStarted3.html
+    #	new file:   build/_book/5-4-getStarted4.html
+    #	new file:   build/_book/5-5-getStarted5.html
+    #	new file:   build/_book/5-6-getStarted6.html
+    #	new file:   build/_book/5-getStarted.html
+    #	new file:   build/_book/6-1-dxweb0.html
+    #	new file:   build/_book/6-2-dxweb1.html
+    #	new file:   build/_book/6-3-dxweb2.html
+    #	new file:   build/_book/6-4-dxweb4.html
+    #	new file:   build/_book/6-CMDvsGUI.html
+    #	new file:   build/_book/7-1-dx1.html
+    #	new file:   build/_book/7-2-dx1a.html
+    #	new file:   build/_book/7-3-dx1b.html
+    #	new file:   build/_book/7-4-dx2.html
+    #	new file:   build/_book/7-5-dx3.html
+    #	new file:   build/_book/7-dx0.html
+    #	new file:   build/_book/8-1-dnaNexusAppsGATK1.html
+    #	new file:   build/_book/8-2-dnaNexusAppsGATK2.html
+    #	new file:   build/_book/8-3-dnaNexusAppsGATK3.html
+    #	new file:   build/_book/8-4-dnaNexusAppsGATK4.html
+    #	new file:   build/_book/8-dnanexusNotes.html
+    #	new file:   build/_book/9-1-dnanexusCmdLine1.html
+    #	new file:   build/_book/9-2-rbinfotk.html
+    #	new file:   build/_book/9-3-rbinfotkr.html
+    #	new file:   build/_book/9-dnanexusCmdLine0.html
+    #	modified:   build/_book/references.html
+    #	modified:   build/_book/search_index.json
+    #	modified:   build/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	modified:   commitInfo.rc
+    #	modified:   commitLogs/0.1.5.log
+    #	new file:   commitLogs/0.1.6.log
+    #	new file:   commitLogs/commitInfo.0.1.5.rc
+    #	modified:   docs/1-1-hi.html
+    #	modified:   docs/1-2-prepreintro2.html
+    #	modified:   docs/1-3-targetAudience.html
+    #	modified:   docs/1-4-targetAudienceNeeds.html
+    #	modified:   docs/1-MAINTITLE.html
+    #	new file:   docs/10-1-appMon2.html
+    #	new file:   docs/10-2-appMon3.html
+    #	new file:   docs/10-3-appMon4.html
+    #	new file:   docs/10-appMon1.html
+    #	new file:   docs/11-1-miscmisccmd2.html
+    #	new file:   docs/11-questions.html
+    #	new file:   docs/12-legal.html
+    #	modified:   docs/2-1-whycloud2.html
+    #	modified:   docs/2-2-whycloud3.html
+    #	modified:   docs/2-whycloud.html
+    #	new file:   docs/3-1-whichCloud1.html
+    #	new file:   docs/3-2-whichCloud2.html
+    #	new file:   docs/3-whichCloud.html
+    #	new file:   docs/4-dnanexusIntro.html
+    #	new file:   docs/5-1-getStarted1.html
+    #	new file:   docs/5-2-getStarted2.html
+    #	new file:   docs/5-3-getStarted3.html
+    #	new file:   docs/5-4-getStarted4.html
+    #	new file:   docs/5-5-getStarted5.html
+    #	new file:   docs/5-6-getStarted6.html
+    #	new file:   docs/5-getStarted.html
+    #	new file:   docs/6-1-dxweb0.html
+    #	new file:   docs/6-2-dxweb1.html
+    #	new file:   docs/6-3-dxweb2.html
+    #	new file:   docs/6-4-dxweb4.html
+    #	new file:   docs/6-CMDvsGUI.html
+    #	new file:   docs/7-1-dx1.html
+    #	new file:   docs/7-2-dx1a.html
+    #	new file:   docs/7-3-dx1b.html
+    #	new file:   docs/7-4-dx2.html
+    #	new file:   docs/7-5-dx3.html
+    #	new file:   docs/7-dx0.html
+    #	new file:   docs/8-1-dnaNexusAppsGATK1.html
+    #	new file:   docs/8-2-dnaNexusAppsGATK2.html
+    #	new file:   docs/8-3-dnaNexusAppsGATK3.html
+    #	new file:   docs/8-4-dnaNexusAppsGATK4.html
+    #	new file:   docs/8-dnanexusNotes.html
+    #	new file:   docs/9-1-dnanexusCmdLine1.html
+    #	new file:   docs/9-2-rbinfotk.html
+    #	new file:   docs/9-3-rbinfotkr.html
+    #	new file:   docs/9-dnanexusCmdLine0.html
+    #	modified:   docs/index.html
+    #	modified:   docs/references.html
+    #	modified:   docs/search_index.json
+    #
+    # Changes not staged for commit:
+    #   (use "git add/rm <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #	deleted:    build/_book/10-1-miscmisccmd2.html
+    #	deleted:    build/_book/10-questions.html
+    #	deleted:    build/_book/11-legal.html
+    #	deleted:    build/_book/3-dnanexusIntro.html
+    #	deleted:    build/_book/4-1-getStarted1.html
+    #	deleted:    build/_book/4-2-getStarted2.html
+    #	deleted:    build/_book/4-3-getStarted3.html
+    #	deleted:    build/_book/4-4-getStarted4.html
+    #	deleted:    build/_book/4-5-getStarted5.html
+    #	deleted:    build/_book/4-6-getStarted6.html
+    #	deleted:    build/_book/4-getStarted.html
+    #	deleted:    build/_book/5-1-dxweb0.html
+    #	deleted:    build/_book/5-2-dxweb1.html
+    #	deleted:    build/_book/5-3-dxweb2.html
+    #	deleted:    build/_book/5-4-dxweb4.html
+    #	deleted:    build/_book/5-CMDvsGUI.html
+    #	deleted:    build/_book/6-1-dx1.html
+    #	deleted:    build/_book/6-2-dx1a.html
+    #	deleted:    build/_book/6-3-dx1b.html
+    #	deleted:    build/_book/6-4-dx2.html
+    #	deleted:    build/_book/6-5-dx3.html
+    #	deleted:    build/_book/6-dx0.html
+    #	deleted:    build/_book/7-1-dnaNexusAppsGATK1.html
+    #	deleted:    build/_book/7-2-dnaNexusAppsGATK2.html
+    #	deleted:    build/_book/7-3-dnaNexusAppsGATK3.html
+    #	deleted:    build/_book/7-4-dnaNexusAppsGATK4.html
+    #	deleted:    build/_book/7-dnanexusNotes.html
+    #	deleted:    build/_book/8-1-dnanexusCmdLine1.html
+    #	deleted:    build/_book/8-2-rbinfotk.html
+    #	deleted:    build/_book/8-3-rbinfotkr.html
+    #	deleted:    build/_book/8-dnanexusCmdLine0.html
+    #	deleted:    build/_book/9-1-appMon2.html
+    #	deleted:    build/_book/9-2-appMon3.html
+    #	deleted:    build/_book/9-3-appMon4.html
+    #	deleted:    build/_book/9-appMon1.html
+    #	deleted:    build/_book/_main.pdf
+    #	deleted:    build/_book/buildApp.html
+    #	deleted:    build/_book/dlres.html
+    #	deleted:    build/_book/example.html
+    #	deleted:    build/_book/legal.html
+    #	deleted:    build/_book/misccmd.html
+    #	deleted:    build/_book/modTheApp.html
+    #	deleted:    build/_book/run.html
+    #	deleted:    build/_book/setup.html
+    #	deleted:    build/_book/styles.css
+    #	deleted:    build/_book/styles.js
+    #	deleted:    build/_book/uploadInput.html
+    #	deleted:    build/_book/web.html
+    #	deleted:    build/_book/wiz.html
+    #	deleted:    build/_main.Rmd
+    #	deleted:    build/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+    #	deleted:    build/scrap/codeblockwiz.2.txt
+    #	deleted:    build/scrap/codeblockwiz.txt
+    #	deleted:    build/scrap/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	modified:   commitLogs/0.1.6.log
+    #	deleted:    docs/_main.pdf
+    #
+
+
+git commit:
+    [master 786cd0e] 0.1.6
+     102 files changed, 22886 insertions(+), 747 deletions(-)
+     create mode 100644 build/_book/10-1-appMon2.html
+     create mode 100644 build/_book/10-2-appMon3.html
+     create mode 100644 build/_book/10-3-appMon4.html
+     create mode 100644 build/_book/10-appMon1.html
+     create mode 100644 build/_book/11-1-miscmisccmd2.html
+     create mode 100644 build/_book/11-questions.html
+     create mode 100644 build/_book/12-legal.html
+     create mode 100644 build/_book/3-1-whichCloud1.html
+     create mode 100644 build/_book/3-2-whichCloud2.html
+     create mode 100644 build/_book/3-whichCloud.html
+     create mode 100644 build/_book/4-dnanexusIntro.html
+     create mode 100644 build/_book/5-1-getStarted1.html
+     create mode 100644 build/_book/5-2-getStarted2.html
+     create mode 100644 build/_book/5-3-getStarted3.html
+     create mode 100644 build/_book/5-4-getStarted4.html
+     create mode 100644 build/_book/5-5-getStarted5.html
+     create mode 100644 build/_book/5-6-getStarted6.html
+     create mode 100644 build/_book/5-getStarted.html
+     create mode 100644 build/_book/6-1-dxweb0.html
+     create mode 100644 build/_book/6-2-dxweb1.html
+     create mode 100644 build/_book/6-3-dxweb2.html
+     create mode 100644 build/_book/6-4-dxweb4.html
+     create mode 100644 build/_book/6-CMDvsGUI.html
+     create mode 100644 build/_book/7-1-dx1.html
+     create mode 100644 build/_book/7-2-dx1a.html
+     create mode 100644 build/_book/7-3-dx1b.html
+     create mode 100644 build/_book/7-4-dx2.html
+     create mode 100644 build/_book/7-5-dx3.html
+     create mode 100644 build/_book/7-dx0.html
+     create mode 100644 build/_book/8-1-dnaNexusAppsGATK1.html
+     create mode 100644 build/_book/8-2-dnaNexusAppsGATK2.html
+     create mode 100644 build/_book/8-3-dnaNexusAppsGATK3.html
+     create mode 100644 build/_book/8-4-dnaNexusAppsGATK4.html
+     create mode 100644 build/_book/8-dnanexusNotes.html
+     create mode 100644 build/_book/9-1-dnanexusCmdLine1.html
+     create mode 100644 build/_book/9-2-rbinfotk.html
+     create mode 100644 build/_book/9-3-rbinfotkr.html
+     create mode 100644 build/_book/9-dnanexusCmdLine0.html
+     create mode 100644 commitLogs/0.1.6.log
+     create mode 100644 commitLogs/commitInfo.0.1.5.rc
+     create mode 100644 docs/10-1-appMon2.html
+     create mode 100644 docs/10-2-appMon3.html
+     create mode 100644 docs/10-3-appMon4.html
+     create mode 100644 docs/10-appMon1.html
+     create mode 100644 docs/11-1-miscmisccmd2.html
+     create mode 100644 docs/11-questions.html
+     create mode 100644 docs/12-legal.html
+     create mode 100644 docs/3-1-whichCloud1.html
+     create mode 100644 docs/3-2-whichCloud2.html
+     create mode 100644 docs/3-whichCloud.html
+     create mode 100644 docs/4-dnanexusIntro.html
+     create mode 100644 docs/5-1-getStarted1.html
+     create mode 100644 docs/5-2-getStarted2.html
+     create mode 100644 docs/5-3-getStarted3.html
+     create mode 100644 docs/5-4-getStarted4.html
+     create mode 100644 docs/5-5-getStarted5.html
+     create mode 100644 docs/5-6-getStarted6.html
+     create mode 100644 docs/5-getStarted.html
+     create mode 100644 docs/6-1-dxweb0.html
+     create mode 100644 docs/6-2-dxweb1.html
+     create mode 100644 docs/6-3-dxweb2.html
+     create mode 100644 docs/6-4-dxweb4.html
+     create mode 100644 docs/6-CMDvsGUI.html
+     create mode 100644 docs/7-1-dx1.html
+     create mode 100644 docs/7-2-dx1a.html
+     create mode 100644 docs/7-3-dx1b.html
+     create mode 100644 docs/7-4-dx2.html
+     create mode 100644 docs/7-5-dx3.html
+     create mode 100644 docs/7-dx0.html
+     create mode 100644 docs/8-1-dnaNexusAppsGATK1.html
+     create mode 100644 docs/8-2-dnaNexusAppsGATK2.html
+     create mode 100644 docs/8-3-dnaNexusAppsGATK3.html
+     create mode 100644 docs/8-4-dnaNexusAppsGATK4.html
+     create mode 100644 docs/8-dnanexusNotes.html
+     create mode 100644 docs/9-1-dnanexusCmdLine1.html
+     create mode 100644 docs/9-2-rbinfotk.html
+     create mode 100644 docs/9-3-rbinfotkr.html
+     create mode 100644 docs/9-dnanexusCmdLine0.html
+
+
+git push:
+    To https://github.com/hartleys/DnaNexusTutorial
+       8a94a14..786cd0e  master -> master
