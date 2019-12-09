@@ -93,3 +93,53 @@ git push:
 ###################
 
 git add:
+
+
+git status:
+    # On branch master
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #	modified:   commitInfo.rc
+    #	modified:   commitLogs/0.1.2.log
+    #	new file:   docs/.nojekyll
+    #
+    # Changes not staged for commit:
+    #   (use "git add/rm <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #	deleted:    build/_book/_main.pdf
+    #	deleted:    build/_book/buildApp.html
+    #	deleted:    build/_book/dlres.html
+    #	deleted:    build/_book/example.html
+    #	deleted:    build/_book/legal.html
+    #	deleted:    build/_book/misccmd.html
+    #	deleted:    build/_book/modTheApp.html
+    #	deleted:    build/_book/run.html
+    #	deleted:    build/_book/setup.html
+    #	deleted:    build/_book/styles.css
+    #	deleted:    build/_book/styles.js
+    #	deleted:    build/_book/uploadInput.html
+    #	deleted:    build/_book/web.html
+    #	deleted:    build/_book/wiz.html
+    #	deleted:    build/_main.Rmd
+    #	deleted:    build/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+    #	deleted:    build/scrap/codeblockwiz.2.txt
+    #	deleted:    build/scrap/codeblockwiz.txt
+    #	deleted:    build/scrap/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	modified:   commitLogs/0.1.2.log
+    #	deleted:    docs/_main.pdf
+    #	deleted:    docs/index.html
+    #
+
+
+git commit:
+    [master 01cfb98] 0.1.2-1
+     2 files changed, 60 insertions(+)
+     create mode 100644 docs/.nojekyll
+
+
+git push:
+    fatal: Authentication failed
+    To https://github.com/hartleys/DnaNexusTutorial
+       11d7531..01cfb98  master -> master
