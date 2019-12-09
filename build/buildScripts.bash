@@ -7,9 +7,11 @@ buildScripts/build.bash dnaNexusTutorial.SWH.2019.09.Rmd
 
 cp -R _book/* ../docs/
 
-ln -s ../docs/prepreintro.html  ../docs/index.html
-ln -s ./_book/prepreintro.html  ./_book/index.html
-ln -s ./_book/index.html        ./_book/00index.html
+cd ../docs/
+ln -s "1-MAINTITLE.html"  "index.html"
+cd ../build/
+ln -s ./_book/1-MAINTITLE.html  ./_book/index.html
+ln -s ./_book/1-MAINTITLE.html  ./_book/00index.html
 
 
 #mv ../docs/_main.pdf ../docs/DnaNexusTutorial.pdf
