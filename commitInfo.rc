@@ -1,7 +1,7 @@
-export VERSION="0.1.7"
-export FULLDATE="Mon Dec  9 15:31:14 EST 2019"
-export FULLDATESEC="1575923474"
+export VERSION="0.1.8"
+export FULLDATE="Mon Dec  9 15:46:47 EST 2019"
+export FULLDATESEC="1575924407"
 export DATE="2019-12-09"
 export DATETEXT="December 09, 2019"
 export COMMITCT=0
-export FULLVERSION=0.1.7
+export FULLVERSION=0.1.8

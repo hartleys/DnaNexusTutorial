@@ -2,3 +2,104 @@
 ###################
 
 git add:
+
+
+git status:
+    # On branch master
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #	modified:   build/_book/11-questions.html
+    #	modified:   build/_book/3-2-whichCloud2.html
+    #	modified:   build/_book/4-dnanexusIntro.html
+    #	modified:   build/_book/7-2-dx1a.html
+    #	new file:   build/_book/img/pricing.png
+    #	modified:   build/_book/search_index.json
+    #	modified:   build/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	modified:   commitInfo.rc
+    #	modified:   commitLogs/0.1.6.log
+    #	new file:   commitLogs/0.1.7.log
+    #	new file:   commitLogs/commitInfo.0.1.6.rc
+    #	modified:   docs/11-questions.html
+    #	modified:   docs/3-2-whichCloud2.html
+    #	modified:   docs/4-dnanexusIntro.html
+    #	modified:   docs/7-2-dx1a.html
+    #	new file:   docs/img/pricing.png
+    #	modified:   docs/search_index.json
+    #
+    # Changes not staged for commit:
+    #   (use "git add/rm <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #	deleted:    build/_book/10-1-miscmisccmd2.html
+    #	deleted:    build/_book/10-questions.html
+    #	deleted:    build/_book/11-legal.html
+    #	deleted:    build/_book/3-dnanexusIntro.html
+    #	deleted:    build/_book/4-1-getStarted1.html
+    #	deleted:    build/_book/4-2-getStarted2.html
+    #	deleted:    build/_book/4-3-getStarted3.html
+    #	deleted:    build/_book/4-4-getStarted4.html
+    #	deleted:    build/_book/4-5-getStarted5.html
+    #	deleted:    build/_book/4-6-getStarted6.html
+    #	deleted:    build/_book/4-getStarted.html
+    #	deleted:    build/_book/5-1-dxweb0.html
+    #	deleted:    build/_book/5-2-dxweb1.html
+    #	deleted:    build/_book/5-3-dxweb2.html
+    #	deleted:    build/_book/5-4-dxweb4.html
+    #	deleted:    build/_book/5-CMDvsGUI.html
+    #	deleted:    build/_book/6-1-dx1.html
+    #	deleted:    build/_book/6-2-dx1a.html
+    #	deleted:    build/_book/6-3-dx1b.html
+    #	deleted:    build/_book/6-4-dx2.html
+    #	deleted:    build/_book/6-5-dx3.html
+    #	deleted:    build/_book/6-dx0.html
+    #	deleted:    build/_book/7-1-dnaNexusAppsGATK1.html
+    #	deleted:    build/_book/7-2-dnaNexusAppsGATK2.html
+    #	deleted:    build/_book/7-3-dnaNexusAppsGATK3.html
+    #	deleted:    build/_book/7-4-dnaNexusAppsGATK4.html
+    #	deleted:    build/_book/7-dnanexusNotes.html
+    #	deleted:    build/_book/8-1-dnanexusCmdLine1.html
+    #	deleted:    build/_book/8-2-rbinfotk.html
+    #	deleted:    build/_book/8-3-rbinfotkr.html
+    #	deleted:    build/_book/8-dnanexusCmdLine0.html
+    #	deleted:    build/_book/9-1-appMon2.html
+    #	deleted:    build/_book/9-2-appMon3.html
+    #	deleted:    build/_book/9-3-appMon4.html
+    #	deleted:    build/_book/9-appMon1.html
+    #	deleted:    build/_book/_main.pdf
+    #	deleted:    build/_book/buildApp.html
+    #	deleted:    build/_book/dlres.html
+    #	deleted:    build/_book/example.html
+    #	deleted:    build/_book/img/dnaNexus.frontpage.PNG
+    #	deleted:    build/_book/legal.html
+    #	deleted:    build/_book/misccmd.html
+    #	deleted:    build/_book/modTheApp.html
+    #	deleted:    build/_book/run.html
+    #	deleted:    build/_book/setup.html
+    #	deleted:    build/_book/styles.css
+    #	deleted:    build/_book/styles.js
+    #	deleted:    build/_book/uploadInput.html
+    #	deleted:    build/_book/web.html
+    #	deleted:    build/_book/wiz.html
+    #	deleted:    build/_main.Rmd
+    #	deleted:    build/dnaNexusTutorial.SWH.2019.09.scrap.Rmd
+    #	deleted:    build/scrap/codeblockwiz.2.txt
+    #	deleted:    build/scrap/codeblockwiz.txt
+    #	deleted:    build/scrap/dnaNexusTutorial.SWH.2019.09.Rmd
+    #	modified:   commitLogs/0.1.7.log
+    #	deleted:    docs/_main.pdf
+    #
+
+
+git commit:
+    [master 3fdf4fd] 0.1.7
+     17 files changed, 295 insertions(+), 27 deletions(-)
+     create mode 100644 build/_book/img/pricing.png
+     create mode 100644 commitLogs/0.1.7.log
+     create mode 100644 commitLogs/commitInfo.0.1.6.rc
+     create mode 100644 docs/img/pricing.png
+
+
+git push:
+    To https://github.com/hartleys/DnaNexusTutorial
+       786cd0e..3fdf4fd  master -> master
