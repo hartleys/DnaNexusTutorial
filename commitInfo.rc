@@ -5,3 +5,5 @@ export DATE="2019-12-09"
 export DATETEXT="December 09, 2019"
 export COMMITCT=0
 export FULLVERSION=0.1.2
+export COMMITCT=1
+export FULLVERSION=0.1.2-1
