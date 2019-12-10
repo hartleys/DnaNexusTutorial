@@ -134,7 +134,7 @@ Google Cloud Platform (GCP)
 * Cheaper
 * More Flexible
 * More complicated to use
-* We are having technical difficulties with account creation/admin
+* Technical difficulties with account creation/admin/funding
 
 DNA Nexus:
 * More Expensive
@@ -163,7 +163,7 @@ and computational biologists.
 knitr::include_graphics("img/pricing.png")
 ```
 
-We are using DNA nexus as to gauge interest in cloud computing and cloud storage. 
+We are using DNA nexus as a pilot to gauge interest in cloud computing and cloud storage.
 
 Comparable prices for GCP:
 * Compute (3.75GB per core): $0.01 to $0.0475 per core per hour
